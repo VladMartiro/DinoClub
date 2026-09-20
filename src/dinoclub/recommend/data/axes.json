@@ -1,0 +1,14 @@
+{
+  "axes": [
+    {"key": "spectacle", "label": "Spectacle",  "low": "intimate and small-scale",     "high": "enormous set-pieces"},
+    {"key": "dread",     "label": "Dread",      "low": "safe and reassuring",          "high": "tense, predatory horror"},
+    {"key": "camp",      "label": "Camp",       "low": "played completely straight",   "high": "knowingly ridiculous"},
+    {"key": "wonder",    "label": "Wonder",     "low": "grounded and matter-of-fact",  "high": "awe at the prehistoric"},
+    {"key": "heart",     "label": "Heart",      "low": "plot over people",             "high": "characters you cry about"},
+    {"key": "science",   "label": "Science",    "low": "pure fantasy",                 "high": "paleo-accurate"},
+    {"key": "retro",     "label": "Retro",      "low": "modern CGI",                   "high": "practical effects, older era"},
+    {"key": "kaiju",     "label": "Kaiju",      "low": "dinosaurs at dinosaur scale",  "high": "city-flattening titans"},
+    {"key": "kid",       "label": "All-Ages",   "low": "strictly for grown-ups",       "high": "the whole family"},
+    {"key": "grit",      "label": "Grit",       "low": "bloodless",                    "high": "brutal survival"}
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "note": "Viewer archetypes for the MOVIE RECOMMENDER -- these are taste clusters, not the dinosaurs from dinoclub.quiz, and are named differently on purpose so the two systems never collide. An archetype's anchor is the centroid of its exemplar movies, optionally nudged toward `emphasis` at `emphasis_strength`. Keeping anchors data-derived means adding a movie can move an archetype, which is intentional.",
+  "personas": [
+    {
+      "id": "the-maximalist",
+      "name": "The Maximalist",
+      "tagline": "Apex spectacle, no notes.",
+      "blurb": "You are here for the thing that is bigger than the other things. Scale is the point, the budget is on the screen, and you want the theater floor to shake.",
+      "exemplars": [
+        "jurassic-world-2015",
+        "dominion-2022",
+        "godzilla-2014"
+      ],
+      "emphasis": {
+        "spectacle": 1.0
+      },
+      "emphasis_strength": 0.35
+    },
+    {
+      "id": "the-thrill-seeker",
+      "name": "The Thrill-Seeker",
+      "tagline": "Clever girl. Clever film.",
+      "blurb": "You want the kitchen scene. Tension, stalking, a predator that is thinking. Spectacle is fine but suspense is the actual product.",
+      "exemplars": [
+        "fallen-kingdom-2018",
+        "sixty-five-2023",
+        "lost-world-1997"
+      ],
+      "emphasis": {
+        "dread": 1.0,
+        "grit": 0.8
+      },
+      "emphasis_strength": 0.3
+    },
+    {
+      "id": "the-soft-touch",
+      "name": "The Soft Touch",
+      "tagline": "Bring tissues to movie night.",
+      "blurb": "Herd animal. You are watching for the characters, and you will defend an animated dinosaur's emotional arc with your entire chest.",
+      "exemplars": [
+        "land-before-time-1988",
+        "good-dinosaur-2015",
+        "were-back-1993"
+      ],
+      "emphasis": {
+        "heart": 1.0
+      },
+      "emphasis_strength": 0.25
+    },
+    {
+      "id": "the-awe-seeker",
+      "name": "The Awe-Seeker",
+      "tagline": "The neck-craning reveal shot.",
+      "blurb": "You are in it for the moment the music swells and somebody takes their sunglasses off. Awe first, teeth second.",
+      "exemplars": [
+        "jurassic-park-1993",
+        "king-kong-2005",
+        "the-lost-world-1925"
+      ],
+      "emphasis": {
+        "wonder": 1.0
+      },
+      "emphasis_strength": 0.3
+    },
+    {
+      "id": "the-purist",
+      "name": "The Practical-Effects Purist",
+      "tagline": "If it isn't stop-motion, is it even real?",
+      "blurb": "Armored against modern CGI. You believe a Harryhausen puppet has more soul than any render farm, and you are frequently correct.",
+      "exemplars": [
+        "valley-of-gwangi-1969",
+        "beast-20000-fathoms-1953",
+        "king-kong-1933"
+      ],
+      "emphasis": {
+        "retro": 1.0
+      },
+      "emphasis_strength": 0.3
+    },
+    {
+      "id": "the-kaiju-head",
+      "name": "The Kaiju Head",
+      "tagline": "Scale is a spectrum and you picked the top.",
+      "blurb": "Dinosaur-sized dinosaurs are a warm-up. You want the one where the monster is the size of a stadium and the city is the co-star.",
+      "exemplars": [
+        "godzilla-vs-kong-2021",
+        "skull-island-2017",
+        "godzilla-1954"
+      ],
+      "emphasis": {
+        "kaiju": 1.0
+      },
+      "emphasis_strength": 0.35
+    },
+    {
+      "id": "the-gremlin",
+      "name": "The Late-Night Gremlin",
+      "tagline": "Small, fast, and feral about a $400k budget.",
+      "blurb": "You have seen things on late-night cable that the rest of the club refuses to believe exist. The worse the rubber, the better the night.",
+      "exemplars": [
+        "carnosaur-1993",
+        "one-million-years-bc-1966",
+        "land-that-time-forgot-1974"
+      ],
+      "emphasis": {
+        "camp": 1.0
+      },
+      "emphasis_strength": 0.3
+    },
+    {
+      "id": "the-fact-checker",
+      "name": "The Fact-Checker",
+      "tagline": "Actually, they had feathers.",
+      "blurb": "You are the reason the club has a fact-check chat. You want the documentary, the real taxonomy, and a dinosaur that moves like an animal instead of a monster.",
+      "exemplars": [
+        "prehistoric-planet-2022",
+        "walking-with-dinosaurs-1999",
+        "dinosaur-13-2014"
+      ],
+      "emphasis": {
+        "science": 1.0
+      },
+      "emphasis_strength": 0.3
+    }
+  ]
+}

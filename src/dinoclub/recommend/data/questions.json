@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "note": "Each option is evidence: 'answering this suggests your taste on axis X sits near value V'. `weight` is how strongly. The adaptive quiz picks whichever question is expected to most reduce uncertainty about your persona, so adding a redundant question costs nothing but adding a badly-calibrated one costs accuracy.",
+  "questions": [
+    {
+      "id": "opening-scene",
+      "text": "Movie night. Lights down. What is the perfect opening shot?",
+      "options": [
+        {"id": "reveal",  "label": "A slow pan up something enormous, with the score swelling", "evidence": {"wonder": 0.95, "spectacle": 0.8}},
+        {"id": "jungle",  "label": "Something moving in the treeline that nobody on screen has noticed yet", "evidence": {"dread": 0.9, "grit": 0.65}},
+        {"id": "credits", "label": "A grainy title card over stock footage of a volcano", "evidence": {"camp": 0.9, "retro": 0.85}},
+        {"id": "kid",     "label": "A small dinosaur hatching, alone, and looking for its mother", "evidence": {"heart": 0.95, "kid": 0.8}}
+      ]
+    },
+    {
+      "id": "accuracy",
+      "text": "Someone pauses the film to say the raptors are the wrong size. You:",
+      "options": [
+        {"id": "agree",    "label": "Already had the paper open", "evidence": {"science": 0.95, "camp": 0.15}},
+        {"id": "tolerate", "label": "Nod, but you are watching for the movie, not the taxonomy", "evidence": {"science": 0.45}, "weight": 0.7},
+        {"id": "dontcare", "label": "Throw popcorn. It has a big mouth and that is enough", "evidence": {"science": 0.08, "camp": 0.75}}
+      ]
+    },
+    {
+      "id": "texture",
+      "text": "Pick a texture.",
+      "options": [
+        {"id": "latex",  "label": "Visible latex, visible seams, visible love", "evidence": {"retro": 0.95, "camp": 0.8}},
+        {"id": "animatronic", "label": "A twelve-ton animatronic that actually got rained on", "evidence": {"retro": 0.7, "spectacle": 0.65, "science": 0.6}},
+        {"id": "cgi",    "label": "Photoreal skin you could count the scales on", "evidence": {"retro": 0.1, "spectacle": 0.75}}
+      ]
+    },
+    {
+      "id": "scale",
+      "text": "How big is the animal, ideally?",
+      "options": [
+        {"id": "real",    "label": "Exactly as big as it really was. That is already terrifying", "evidence": {"kaiju": 0.05, "science": 0.8}},
+        {"id": "big",     "label": "Big enough to total a jeep", "evidence": {"kaiju": 0.3, "spectacle": 0.7}},
+        {"id": "titan",   "label": "Big enough to wear a building as a hat", "evidence": {"kaiju": 0.98, "spectacle": 0.9}}
+      ]
+    },
+    {
+      "id": "tone",
+      "text": "The film is ninety minutes in. What is it doing?",
+      "options": [
+        {"id": "chase",   "label": "One long, sweaty chase and you have forgotten to blink", "evidence": {"dread": 0.85, "grit": 0.75, "spectacle": 0.65}},
+        {"id": "quiet",   "label": "A quiet scene where two characters finally talk", "evidence": {"heart": 0.85, "dread": 0.25}},
+        {"id": "brawl",   "label": "Two enormous animals demolishing a harbor", "evidence": {"kaiju": 0.9, "spectacle": 0.95, "camp": 0.6}},
+        {"id": "herd",    "label": "Drifting over a migrating herd while a narrator explains the mating call", "evidence": {"science": 0.9, "wonder": 0.85, "dread": 0.2}}
+      ]
+    },
+    {
+      "id": "kid-sidekick",
+      "text": "There is a kid in the cast.",
+      "options": [
+        {"id": "love",   "label": "Good. They are the emotional core", "evidence": {"kid": 0.9, "heart": 0.8}},
+        {"id": "fine",   "label": "Fine, as long as they are in real danger", "evidence": {"kid": 0.45, "grit": 0.7}},
+        {"id": "no",     "label": "No. This film should be rated for adults and it should earn it", "evidence": {"kid": 0.08, "grit": 0.85, "dread": 0.75}}
+      ]
+    },
+    {
+      "id": "budget",
+      "text": "You find out the whole thing was shot for $400,000.",
+      "options": [
+        {"id": "delight", "label": "Immediately more interesting", "evidence": {"camp": 0.95, "spectacle": 0.2}},
+        {"id": "neutral", "label": "Depends entirely on whether the puppet works", "evidence": {"camp": 0.55, "retro": 0.6}, "weight": 0.6},
+        {"id": "no",      "label": "I want the money on the screen", "evidence": {"camp": 0.12, "spectacle": 0.9}}
+      ]
+    },
+    {
+      "id": "ending",
+      "text": "How should it end?",
+      "options": [
+        {"id": "survive", "label": "Most of them do not make it, and the film does not apologize", "evidence": {"grit": 0.92, "dread": 0.8, "kid": 0.15}},
+        {"id": "awe",     "label": "The survivors watch the animals from a distance and say nothing", "evidence": {"wonder": 0.9, "heart": 0.65}},
+        {"id": "warm",    "label": "The family, human or otherwise, is back together", "evidence": {"heart": 0.9, "kid": 0.75, "grit": 0.15}},
+        {"id": "sequel",  "label": "A tail knocks over a radio tower and it cuts to black", "evidence": {"camp": 0.7, "kaiju": 0.7, "spectacle": 0.75}}
+      ]
+    },
+    {
+      "id": "era",
+      "text": "Club is picking from the archive. Which shelf?",
+      "options": [
+        {"id": "silent",  "label": "Anything from before 1970", "evidence": {"retro": 0.95, "wonder": 0.7}},
+        {"id": "eighties","label": "The eighties and nineties, the animatronic golden age", "evidence": {"retro": 0.65, "heart": 0.6}},
+        {"id": "modern",  "label": "Whatever came out most recently", "evidence": {"retro": 0.08, "spectacle": 0.8}}
+      ]
+    },
+    {
+      "id": "why",
+      "text": "Be honest. Why do you like dinosaur movies?",
+      "options": [
+        {"id": "real",    "label": "Because these animals actually existed and that is insane", "evidence": {"wonder": 0.95, "science": 0.85}},
+        {"id": "scary",   "label": "Because something very large wants to eat someone", "evidence": {"dread": 0.9, "grit": 0.7}},
+        {"id": "fun",     "label": "Because they are extremely stupid and I am having a great time", "evidence": {"camp": 0.9, "kid": 0.55}},
+        {"id": "feel",    "label": "Because I was a kid once and it never really wore off", "evidence": {"heart": 0.9, "wonder": 0.7, "kid": 0.7}}
+      ]
+    }
+  ]
+}

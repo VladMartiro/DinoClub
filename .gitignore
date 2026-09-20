@@ -1,0 +1,28 @@
+# --- Private club data. Nothing in here belongs on a public remote. ---
+data/ratings.csv
+data/members*
+data/responses*
+data/*.private.json
+secrets/
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Notebook output that bloats diffs
+notebooks/**/outputs/
+
+# macOS
+.DS_Store
