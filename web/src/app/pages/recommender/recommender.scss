@@ -1,0 +1,88 @@
+.start {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 44px;
+}
+
+.start__title {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.start__body {
+  margin: 0;
+  max-width: 52ch;
+}
+
+.shell {
+  margin-bottom: 44px;
+  border-style: dashed;
+}
+
+.shell__title {
+  font-size: 1.3rem;
+  margin: 12px 0 10px;
+}
+
+.shell__body {
+  margin: 0 0 12px;
+  max-width: 62ch;
+}
+
+.taste {
+  margin-bottom: 40px;
+}
+
+.taste__h2 {
+  font-size: 1.22rem;
+  margin-bottom: 8px;
+}
+
+.taste__lede {
+  margin: 0 0 16px;
+  max-width: 58ch;
+  font-size: 0.95rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.84rem;
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+.notes__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.note {
+  padding-left: 15px;
+  border-left: 2px solid var(--border);
+}
+
+.note__title {
+  font-size: 1.06rem;
+  margin-bottom: 5px;
+}
+
+.note__body {
+  margin: 0;
+  font-size: 0.95rem;
+}

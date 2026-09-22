@@ -1,0 +1,67 @@
+<div class="page wrap">
+  <span class="tag">Personality test</span>
+  <h1 class="page__title">What type of dinosaur are you?</h1>
+  <p class="page__lede">
+    Ten questions about how you handle problems, groups and conflict. No
+    dinosaur knowledge involved &mdash; the dinosaur comes out of the maths at
+    the end.
+  </p>
+
+  @if (!started()) {
+    <div class="card start">
+      <div class="start__copy">
+        <h2 class="start__title">Ready when you are</h2>
+        <p class="muted start__body">
+          Takes about two minutes. There are no right answers and nothing is
+          saved anywhere.
+        </p>
+      </div>
+      <button class="btn btn--primary" type="button" (click)="start()">
+        Start the test
+      </button>
+    </div>
+  } @else {
+    <div class="card shell">
+      <span class="tag tag--fern">Shell</span>
+      <h2 class="shell__title">The engine is not connected yet</h2>
+      <p class="muted shell__body">
+        This page is the skeleton. The scoring algorithm exists and is tested
+        in the Python package, but there is no API between them yet, so the
+        button has nothing to call.
+      </p>
+      <p class="muted shell__body">
+        When it is wired up, the questions appear here one at a time, and this
+        panel becomes your result: dinosaur, match percentage, radar chart and
+        how close the runners-up came.
+      </p>
+      <button class="btn btn--ghost" type="button" (click)="reset()">
+        Back
+      </button>
+    </div>
+  }
+
+  <section class="axes">
+    <h2 class="axes__h2">The four axes you get scored on</h2>
+    <div class="axes__list">
+      @for (axis of axes; track axis.key) {
+        <div class="axis">
+          <code class="axis__key">{{ axis.key }}</code>
+          <div class="axis__poles">
+            <span class="muted">{{ axis.negative }}</span>
+            <span class="axis__line" aria-hidden="true"></span>
+            <span class="muted">{{ axis.positive }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="how">
+    <h2 class="axes__h2">How the match works</h2>
+    <ol class="how__list">
+      @for (step of steps; track step) {
+        <li class="muted">{{ step }}</li>
+      }
+    </ol>
+  </section>
+</div>

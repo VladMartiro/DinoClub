@@ -1,0 +1,208 @@
+/* Global design tokens and base styles.
+   Colors are defined once here and referenced everywhere else, so retheming
+   the site is a change to this file only. */
+
+:root {
+  /* Surfaces, darkest to lightest */
+  --bg: #0f1210;
+  --surface: #171b18;
+  --surface-raised: #1f2521;
+  --border: #2c342e;
+
+  /* Text */
+  --text: #eef2ee;
+  --text-muted: #9aa79d;
+
+  /* Brand: amber amber like museum lighting, fern green for support */
+  --accent: #e8a33d;
+  --accent-ink: #1a1207;
+  --accent-soft: rgba(232, 163, 61, 0.14);
+  --fern: #6fbf8b;
+  --fern-soft: rgba(111, 191, 139, 0.14);
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.36);
+  --maxw: 1080px;
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* The site is dark by default; this is the light variant. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface-raised: #fbfaf7;
+    --border: #e2ded4;
+    --text: #1b1f1c;
+    --text-muted: #626b64;
+    --accent: #b9761a;
+    --accent-ink: #fffaf2;
+    --accent-soft: rgba(185, 118, 26, 0.12);
+    --fern: #2f7d51;
+    --fern-soft: rgba(47, 125, 81, 0.12);
+    --shadow: 0 10px 26px rgba(25, 30, 26, 0.09);
+  }
+}
+
+:root[data-theme='light'] {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface-raised: #fbfaf7;
+  --border: #e2ded4;
+  --text: #1b1f1c;
+  --text-muted: #626b64;
+  --accent: #b9761a;
+  --accent-ink: #fffaf2;
+  --accent-soft: rgba(185, 118, 26, 0.12);
+  --fern: #2f7d51;
+  --fern-soft: rgba(47, 125, 81, 0.12);
+  --shadow: 0 10px 26px rgba(25, 30, 26, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Shared building blocks, used across pages. */
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease, background 0.12s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--surface-raised);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.tag--fern {
+  background: var(--fern-soft);
+  color: var(--fern);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.page {
+  padding: 44px 0 72px;
+}
+
+.page__title {
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  margin-bottom: 12px;
+}
+
+.page__lede {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 62ch;
+  margin: 0 0 32px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 28px 0 52px;
+  }
+}

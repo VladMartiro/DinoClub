@@ -26,3 +26,10 @@ notebooks/**/outputs/
 
 # macOS
 .DS_Store
+
+# Angular / node (web/)
+node_modules/
+web/dist/
+web/.angular/
+web/node_modules/
+npm-debug.log*

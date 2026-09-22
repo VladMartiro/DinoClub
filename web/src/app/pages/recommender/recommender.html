@@ -1,0 +1,63 @@
+<div class="page wrap">
+  <span class="tag">Recommender</span>
+  <h1 class="page__title">What should you watch next?</h1>
+  <p class="page__lede">
+    Tell us what you actually enjoy about dinosaur films &mdash; the awe, the
+    dread, the visible rubber &mdash; and we pick from the club catalogue.
+  </p>
+
+  @if (!searching()) {
+    <div class="card start">
+      <div>
+        <h2 class="start__title">Pick from 28 films</h2>
+        <p class="muted start__body">
+          A handful of questions about taste, then a ranked shortlist with the
+          reason each film is on it.
+        </p>
+      </div>
+      <button class="btn btn--primary" type="button" (click)="findFilm()">
+        Find me a film
+      </button>
+    </div>
+  } @else {
+    <div class="card shell">
+      <span class="tag tag--fern">Shell</span>
+      <h2 class="shell__title">The engine is not connected yet</h2>
+      <p class="muted shell__body">
+        The recommender itself works &mdash; catalogue, adaptive questions,
+        ranking and the offline evaluation all live in the Python package. What
+        is missing is the API layer between it and this page.
+      </p>
+      <p class="muted shell__body">
+        Once connected, this panel holds your shortlist: film, match score, and
+        a short line on why it was picked for you.
+      </p>
+      <button class="btn btn--ghost" type="button" (click)="reset()">Back</button>
+    </div>
+  }
+
+  <section class="taste">
+    <h2 class="taste__h2">The ten taste axes</h2>
+    <p class="muted taste__lede">
+      Separate from the personality test's four traits &mdash; these describe
+      films, not people.
+    </p>
+    <ul class="chips">
+      @for (axis of sampleAxes; track axis) {
+        <li class="chip">{{ axis }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="notes">
+    <h2 class="taste__h2">Why it is built this way</h2>
+    <div class="notes__grid">
+      @for (note of notes; track note.title) {
+        <article class="note">
+          <h3 class="note__title">{{ note.title }}</h3>
+          <p class="note__body muted">{{ note.body }}</p>
+        </article>
+      }
+    </div>
+  </section>
+</div>
