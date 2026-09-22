@@ -100,7 +100,9 @@ a {
 }
 
 .page {
-  padding: 40px 0 64px;
+  /* padding-block only: pages are `class="page wrap"`, and a shorthand here
+     would override the side gutter .wrap sets. */
+  padding-block: 40px 64px;
 }
 
 .dim {
@@ -182,13 +184,25 @@ a {
   }
 }
 
+@media (max-width: 400px) {
+  /* Press Start 2P is fixed-width, so a 25-character label needs ~320px on
+     its own. Below that, shrink it and let it wrap rather than push the page
+     wider than the screen. */
+  .btn {
+    font-size: 0.58rem;
+    padding: 13px 14px;
+    white-space: normal;
+    line-height: 1.5;
+  }
+}
+
 @media (max-width: 640px) {
   body {
     font-size: 17px;
   }
 
   .page {
-    padding: 26px 0 44px;
+    padding-block: 26px 44px;
   }
 
   .box {
