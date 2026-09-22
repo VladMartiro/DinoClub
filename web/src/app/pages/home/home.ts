@@ -9,4 +9,8 @@ import { PixelDino } from '../../shared/pixel-dino/pixel-dino';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home {
+  /* PLACEHOLDER: swap in the real invite / club page URLs. */
+  protected readonly discordUrl = 'https://discord.gg/PLACEHOLDER';
+  protected readonly uncClubUrl = 'https://PLACEHOLDER';
+}
