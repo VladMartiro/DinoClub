@@ -6,14 +6,14 @@
 
   <div class="actions">
     <button class="btn btn--discord" type="button" (click)="soon('DISCORD')">JOIN DISCORD</button>
-    <button class="btn btn--alt" type="button" (click)="soon('UNC CLUB')">JOIN UNC CLUB</button>
+    <button class="btn" type="button" (click)="soon('UNC CLUB')">JOIN UNC CLUB</button>
   </div>
   @if (pending()) {
     <p class="soon" role="status">{{ pending() }} LINK COMING SOON</p>
   }
 
   <div class="actions">
-    <a class="btn" routerLink="/quiz">DINO PERSONALITY TEST</a>
+    <a class="btn btn--alt" routerLink="/quiz">DINO PERSONALITY TEST</a>
     <a class="btn btn--alt" routerLink="/recommender">DINO MOVIE RECOMMENDATION</a>
   </div>
 
