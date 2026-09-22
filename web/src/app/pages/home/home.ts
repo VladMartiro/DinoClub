@@ -1,33 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { PixelDino } from '../../shared/pixel-dino/pixel-dino';
+
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, PixelDino],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
-  protected readonly features = [
-    {
-      tag: 'Quiz',
-      title: 'What type of dinosaur are you?',
-      body: 'Ten questions, four behavioral axes, one dinosaur. It scores you on traits and matches you to the closest archetype rather than counting points per dinosaur.',
-      link: '/quiz',
-      cta: 'Take the test',
-    },
-    {
-      tag: 'Recommender',
-      title: 'Find your next film',
-      body: 'Tell us what you like and we pick from the club catalogue. Built to handle a small library and cold starts, so it works before anyone has rated anything.',
-      link: '/recommender',
-      cta: 'Get a recommendation',
-    },
-  ];
-
-  protected readonly stats = [
-    { value: '10', label: 'dinosaur archetypes' },
-    { value: '4', label: 'trait axes' },
-    { value: '28', label: 'films in the catalogue' },
-  ];
-}
+export class Home {}

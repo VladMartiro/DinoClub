@@ -1,51 +1,40 @@
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="topbar">
-  <div class="wrap topbar__inner">
-    <a class="brand" routerLink="/" (click)="closeNav()">
-      <span class="brand__mark" aria-hidden="true">&#129429;</span>
-      <span class="brand__text">Dino&nbsp;Club</span>
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="logo" routerLink="/" (click)="closeNav()">
+      <pixel-dino sprite="trex" [scale]="2" />
+      <span>DINO CLUB</span>
     </a>
 
     <button
-      class="topbar__burger"
+      class="bar__toggle"
       type="button"
       [attr.aria-expanded]="navOpen()"
-      aria-controls="site-nav"
-      aria-label="Toggle navigation"
+      aria-controls="nav"
       (click)="toggleNav()"
     >
-      <span></span><span></span><span></span>
+      MENU
     </button>
 
-    <nav id="site-nav" class="nav" [class.nav--open]="navOpen()">
+    <nav id="nav" class="nav" [class.nav--open]="navOpen()">
       @for (link of links; track link.path) {
         <a
-          class="nav__link"
           [routerLink]="link.path"
-          routerLinkActive="nav__link--active"
+          routerLinkActive="on"
           [routerLinkActiveOptions]="{ exact: link.exact }"
           (click)="closeNav()"
           >{{ link.label }}</a
         >
       }
-      <button class="nav__theme" type="button" (click)="toggleTheme()">
-        {{ theme() === 'dark' ? 'Light mode' : 'Dark mode' }}
-      </button>
     </nav>
   </div>
 </header>
 
-<main id="main">
+<main>
   <router-outlet />
 </main>
 
-<footer class="footer">
-  <div class="wrap footer__inner">
-    <p class="muted">Dino Club &middot; a university club for dinosaur movies</p>
-    <p class="muted footer__note">
-      The quiz and recommender are open source &mdash;
-      <a href="https://github.com/VladMartiro/DinoClub">see the repo</a>.
-    </p>
+<footer class="foot">
+  <div class="wrap">
+    <span class="dim">DINO CLUB &middot; PRESS START</span>
   </div>
 </footer>

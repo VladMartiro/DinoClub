@@ -1,63 +1,23 @@
 <div class="page wrap">
-  <span class="tag">About us</span>
-  <h1 class="page__title">A film club with one very specific interest</h1>
-  <p class="page__lede">
-    Dino Club started because a few of us realised we had each, separately,
-    watched every dinosaur film we could find. It turns out there are far more
-    than you would expect, and most of them are not good, and that is the fun.
-  </p>
+  <h1>THE CREW</h1>
+  <p class="dim intro">Four people who have seen too many dinosaur movies.</p>
 
-  <section class="about__grid">
-    <div class="card about__panel">
-      <h2 class="about__h2">When we meet</h2>
-      <dl class="meta">
-        <dt>Day</dt>
-        <dd class="placeholder">{{ meeting.day }}</dd>
-        <dt>Time</dt>
-        <dd class="placeholder">{{ meeting.time }}</dd>
-        <dt>Where</dt>
-        <dd class="placeholder">{{ meeting.place }}</dd>
-      </dl>
-      <p class="muted about__small">
-        Screenings are open to everyone. There is no membership and there are no
-        dues.
-      </p>
-    </div>
-
-    <div class="card about__panel">
-      <h2 class="about__h2">Get in touch</h2>
-      <dl class="meta">
-        <dt>Email</dt>
-        <dd class="placeholder">{{ contact.email }}</dd>
-        <dt>Instagram</dt>
-        <dd class="placeholder">{{ contact.instagram }}</dd>
-        <dt>Discord</dt>
-        <dd class="placeholder">{{ contact.discord }}</dd>
-      </dl>
-      <p class="muted about__small">
-        Easiest way in is to just turn up to a screening.
-      </p>
-    </div>
-  </section>
-
-  <section class="about__rules">
-    <h2 class="about__h2 about__h2--wide">How it works</h2>
-    <div class="rules">
-      @for (rule of rules; track rule.title) {
-        <article class="rule">
-          <h3 class="rule__title">{{ rule.title }}</h3>
-          <p class="rule__body muted">{{ rule.body }}</p>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section class="about__cta">
-    <h2 class="about__h2">Which dinosaur are you, though</h2>
-    <p class="muted">
-      We built a personality test to settle it. It scores you on four
-      behavioral traits and matches you against ten dinosaur archetypes.
-    </p>
-    <a class="btn btn--primary" routerLink="/quiz">Take the test</a>
-  </section>
+  <div class="crew">
+    @for (member of crew; track member.name; let i = $index) {
+      <article class="box card">
+        <div class="shot">
+          @if (member.photo) {
+            <img [src]="member.photo" [alt]="member.name" />
+          } @else {
+            <div class="slot">
+              <pixel-dino [sprite]="member.sprite" [scale]="5" [flip]="i % 2 === 1" />
+              <span class="slot__tag">PHOTO</span>
+            </div>
+          }
+        </div>
+        <h3>{{ member.name }}</h3>
+        <p class="dim role">{{ member.role }}</p>
+      </article>
+    }
+  </div>
 </div>

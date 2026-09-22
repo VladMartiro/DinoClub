@@ -13,26 +13,18 @@ describe('App shell', () => {
   });
 
   it('creates the app', () => {
-    const fixture = TestBed.createComponent(App);
-    expect(fixture.componentInstance).toBeTruthy();
+    expect(TestBed.createComponent(App).componentInstance).toBeTruthy();
   });
 
-  it('renders the brand and every nav link', async () => {
+  it('renders every nav link', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
 
-    expect(el.querySelector('.brand__text')?.textContent).toContain('Dino');
-
-    const labels = Array.from(el.querySelectorAll('.nav__link')).map((a) =>
+    const labels = Array.from(el.querySelectorAll('.nav a')).map((a) =>
       a.textContent?.trim(),
     );
-    expect(labels).toEqual([
-      'Home',
-      'Personality Test',
-      'Recommender',
-      'About Us',
-    ]);
+    expect(labels).toEqual(['HOME', 'QUIZ', 'FILMS', 'CREW']);
   });
 
   it('has a route for every nav link', () => {

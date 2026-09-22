@@ -1,93 +1,65 @@
-.about__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
-  margin-bottom: 44px;
+.intro {
+  margin: 14px 0 32px;
 }
 
-.about__panel {
+.crew {
+  /* 2x2, collapsing to a single column on phones. Capped because the photo
+     slot is square: at full page width each card became a 430px tall box. */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 600px;
+}
+
+.card {
+  text-align: center;
+}
+
+.shot {
+  aspect-ratio: 1;
+  margin-bottom: 14px;
+  border: var(--px) solid var(--line);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Empty photo slot: hatched, obviously unfinished. */
+.slot {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--line);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 8px,
+    rgba(63, 82, 35, 0.22) 8px 16px
+  );
 }
 
-.about__h2 {
-  font-size: 1.3rem;
-  margin-bottom: 14px;
+.slot__tag {
+  font-family: var(--font-display);
+  font-size: 0.54rem;
+  color: var(--dim);
 }
 
-.about__h2--wide {
-  margin-bottom: 18px;
+.role {
+  margin: 6px 0 0;
+  font-size: 0.86rem;
 }
 
-.about__small {
-  margin: 14px 0 0;
-  font-size: 0.89rem;
-}
-
-.meta {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 9px 14px;
-  font-size: 0.95rem;
-}
-
-.meta dt {
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.meta dd {
-  margin: 0;
-}
-
-/* Placeholder club details read as unfinished on purpose. */
-.placeholder {
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: var(--radius-sm);
-  padding: 1px 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.about__rules {
-  margin-bottom: 44px;
-}
-
-.rules {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 18px;
-}
-
-.rule {
-  padding-left: 15px;
-  border-left: 2px solid var(--border);
-}
-
-.rule__title {
-  font-size: 1.06rem;
-  margin-bottom: 5px;
-}
-
-.rule__body {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-.about__cta {
-  padding: 28px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface-raised);
-}
-
-.about__cta p {
-  max-width: 56ch;
-  margin: 0 0 18px;
-}
-
-.about__cta a:hover {
-  text-decoration: none;
+@media (max-width: 560px) {
+  .crew {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,54 +1,15 @@
-<section class="hero">
-  <div class="wrap hero__inner">
-    <span class="tag">University film club</span>
-    <h1 class="hero__title">
-      We watch dinosaur movies.<br />
-      All of them. Even the bad ones.
-    </h1>
-    <p class="hero__lede">
-      Dino Club meets to watch everything with a dinosaur in it &mdash; the
-      classics, the documentaries, and the straight-to-cable ones with visible
-      rubber. Find out which dinosaur you are, then let us pick what you watch
-      next.
-    </p>
-    <div class="hero__actions">
-      <a class="btn btn--primary" routerLink="/quiz">Take the personality test</a>
-      <a class="btn btn--ghost" routerLink="/about">About the club</a>
-    </div>
+<div class="page wrap title">
+  <pixel-dino sprite="trex" [scale]="9" label="Pixel art tyrannosaurus" />
 
-    <dl class="stats">
-      @for (stat of stats; track stat.label) {
-        <div class="stats__item">
-          <dt class="stats__value">{{ stat.value }}</dt>
-          <dd class="stats__label">{{ stat.label }}</dd>
-        </div>
-      }
-    </dl>
+  <h1>DINO CLUB</h1>
+  <p class="dim tagline">
+    We watch dinosaur movies. All of them. Even the bad ones.
+  </p>
+
+  <div class="actions">
+    <a class="btn" routerLink="/quiz">WHICH DINO ARE YOU?</a>
+    <a class="btn btn--alt" routerLink="/recommender">PICK MY FILM</a>
   </div>
-</section>
 
-<section class="wrap features">
-  @for (feature of features; track feature.link) {
-    <article class="card feature">
-      <span class="tag tag--fern">{{ feature.tag }}</span>
-      <h2 class="feature__title">{{ feature.title }}</h2>
-      <p class="feature__body muted">{{ feature.body }}</p>
-      <a class="btn btn--ghost feature__cta" [routerLink]="feature.link">
-        {{ feature.cta }}
-      </a>
-    </article>
-  }
-</section>
-
-<section class="wrap joinstrip">
-  <div class="joinstrip__inner">
-    <div>
-      <h2 class="joinstrip__title">Screenings are open to everyone</h2>
-      <p class="muted joinstrip__body">
-        No signup, no dues, no prior knowledge of the Cretaceous required. Turn
-        up, argue about paleoaccuracy, stay for the credits.
-      </p>
-    </div>
-    <a class="btn btn--primary" routerLink="/about">Find out when we meet</a>
-  </div>
-</section>
+  <p class="coin blink">&#9654; INSERT COIN</p>
+</div>
