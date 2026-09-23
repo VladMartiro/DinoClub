@@ -51,32 +51,49 @@
         <p class="match">{{ r.matches[0].matchPercent | number: '1.0-0' }}% MATCH</p>
         <p class="blurb">{{ r.winner.blurb }}</p>
 
-        <!-- 2D map: your dot over the four corners -->
-        <div class="map" role="img" [attr.aria-label]="'Your position: ' + r.summary.join(', ')">
-          <span class="map__lbl map__lbl--top">{{ yTrait.positive | uppercase }}</span>
-          <span class="map__lbl map__lbl--bottom">{{ yTrait.negative | uppercase }}</span>
-          <span class="map__lbl map__lbl--left">{{ xTrait.negative | uppercase }}</span>
-          <span class="map__lbl map__lbl--right">{{ xTrait.positive | uppercase }}</span>
-          <div class="map__grid">
-            <div class="map__plot">
-            @for (d of engine.dinosaurs; track d.id) {
+        @if (isMap) {
+          <!-- 2D map: your dot over the four corners -->
+          <div class="map" role="img" [attr.aria-label]="'Your position: ' + r.summary.join(', ')">
+            <span class="map__lbl map__lbl--top">{{ yTrait.positive | uppercase }}</span>
+            <span class="map__lbl map__lbl--bottom">{{ yTrait.negative | uppercase }}</span>
+            <span class="map__lbl map__lbl--left">{{ xTrait.negative | uppercase }}</span>
+            <span class="map__lbl map__lbl--right">{{ xTrait.positive | uppercase }}</span>
+            <div class="map__grid">
+              <div class="map__plot">
+              @for (d of engine.dinosaurs; track d.id) {
+                <div
+                  class="map__dino"
+                  [class.map__dino--win]="d.id === r.winner.id"
+                  [style.left.%]="pct(d.traits[xTrait.key])"
+                  [style.top.%]="pct(d.traits[yTrait.key], true)"
+                >
+                  <pixel-dino [sprite]="sprite(d.id)" [scale]="2" [flip]="d.traits[xTrait.key] < 0" />
+                </div>
+              }
               <div
-                class="map__dino"
-                [class.map__dino--win]="d.id === r.winner.id"
-                [style.left.%]="pct(d.traits[xTrait.key])"
-                [style.top.%]="pct(d.traits[yTrait.key], true)"
-              >
-                <pixel-dino [sprite]="sprite(d.id)" [scale]="2" [flip]="d.traits[xTrait.key] < 0" />
+                class="map__you blink"
+                [style.left.%]="pct(r.profile[xTrait.key])"
+                [style.top.%]="pct(r.profile[yTrait.key], true)"
+              ></div>
               </div>
-            }
-            <div
-              class="map__you blink"
-              [style.left.%]="pct(r.profile[xTrait.key])"
-              [style.top.%]="pct(r.profile[yTrait.key], true)"
-            ></div>
             </div>
           </div>
-        </div>
+        } @else {
+          <!-- one bipolar bar per axis: you (pink) against the winner (green) -->
+          <div class="bars" role="img" [attr.aria-label]="'Your traits: ' + r.summary.join(', ')">
+            @for (t of engine.space.traits; track t.key) {
+              <div class="barrow">
+                <span class="barrow__lbl dim">{{ t.negative | uppercase }}</span>
+                <div class="barrow__track">
+                  <span class="barrow__dino" [style.left.%]="pct(r.winner.traits[t.key])"></span>
+                  <span class="barrow__you blink" [style.left.%]="pct(r.profile[t.key])"></span>
+                </div>
+                <span class="barrow__lbl">{{ t.positive | uppercase }}</span>
+              </div>
+            }
+            <p class="legend dim">&#9632; YOU &nbsp; &#9633; {{ r.winner.name | uppercase }}</p>
+          </div>
+        }
 
         <p class="dim summary">{{ r.summary.join(' · ') | uppercase }}</p>
 

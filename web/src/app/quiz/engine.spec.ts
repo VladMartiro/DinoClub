@@ -13,7 +13,7 @@ describe('Engine parity with the Python reference', () => {
   });
 
   it('is checking against the dataset the site ships', () => {
-    expect(fixture.dataset).toBe('mini');
+    expect(fixture.dataset).toBe('full');
     expect(fixture.cases.length).toBeGreaterThan(20);
   });
 

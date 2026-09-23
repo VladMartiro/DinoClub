@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
+import { loadEngine } from '../../quiz/data';
 import { Quiz } from './quiz';
 
 function el(fixture: ReturnType<typeof TestBed.createComponent<Quiz>>): HTMLElement {
@@ -42,12 +43,19 @@ describe('Quiz page, end to end', () => {
     expect(page.querySelector('.youare')?.textContent).toContain('YOU ARE');
     expect(page.querySelector('h1')?.textContent?.trim().length).toBeGreaterThan(0);
     expect(page.querySelector('.match')?.textContent).toMatch(/\d+% MATCH/);
-    // Four dinosaurs on the map, one of them highlighted, plus your dot.
-    expect(page.querySelectorAll('.map__dino').length).toBe(4);
-    expect(page.querySelectorAll('.map__dino--win').length).toBe(1);
-    expect(page.querySelector('.map__you')).not.toBeNull();
-    // Three runners-up listed.
-    expect(page.querySelectorAll('.others li').length).toBe(3);
+    const engine = loadEngine();
+    if (engine.keys.length === 2) {
+      // Every dinosaur on the map, one highlighted, plus your dot.
+      expect(page.querySelectorAll('.map__dino').length).toBe(engine.dinosaurs.length);
+      expect(page.querySelectorAll('.map__dino--win').length).toBe(1);
+      expect(page.querySelector('.map__you')).not.toBeNull();
+    } else {
+      // One bar per axis, each with a you-marker and a winner-marker.
+      expect(page.querySelectorAll('.barrow').length).toBe(engine.keys.length);
+      expect(page.querySelectorAll('.barrow__you').length).toBe(engine.keys.length);
+      expect(page.querySelectorAll('.barrow__dino').length).toBe(engine.keys.length);
+    }
+    expect(page.querySelectorAll('.others li').length).toBe(Math.min(4, engine.dinosaurs.length - 1));
   });
 
   it('BACK on the first question returns to the intro, otherwise undoes one answer', async () => {

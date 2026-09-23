@@ -12,7 +12,14 @@ type Phase = 'intro' | 'asking' | 'result';
 const SPRITES: Record<string, SpriteName> = {
   tyrannosaurus: 'trex',
   velociraptor: 'raptor',
+  triceratops: 'trike',
   ankylosaurus: 'ankylo',
+  parasaurolophus: 'para',
+  spinosaurus: 'spino',
+  pteranodon: 'ptera',
+  therizinosaurus: 'theri',
+  pachycephalosaurus: 'pachy',
+  dilophosaurus: 'dilo',
   gallimimus: 'galli',
 };
 
@@ -34,8 +41,10 @@ export class Quiz {
   protected readonly total = this.questions.length;
   protected readonly current = computed(() => this.questions[this.index()]);
 
-  /* The two axes, for the map. The mini dataset is two-dimensional by
-     design; x is the first trait, y the second. */
+  /* With exactly two axes the result is drawn as a map with every dinosaur
+     on it. With more, it is one bipolar bar per axis: you against the winner.
+     Both datasets stay renderable. */
+  protected readonly isMap = this.engine.keys.length === 2;
   protected readonly xTrait = this.engine.space.traits[0];
   protected readonly yTrait = this.engine.space.traits[1];
 
@@ -89,7 +98,8 @@ export class Quiz {
     return (flip ? 1 - t : t) * 100;
   }
 
+  /* Runners-up. Four is enough to read; ten would be a leaderboard. */
   protected others(result: Result): Match[] {
-    return result.matches.slice(1);
+    return result.matches.slice(1, 5);
   }
 }

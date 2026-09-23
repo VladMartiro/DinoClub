@@ -241,6 +241,65 @@
   outline: var(--px) solid var(--bg);
 }
 
+.bars {
+  max-width: 520px;
+  margin: 0 auto 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.barrow {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.48rem;
+}
+
+.barrow__lbl:first-child {
+  text-align: right;
+}
+
+.barrow__lbl:last-child {
+  text-align: left;
+  color: var(--green);
+}
+
+.barrow__track {
+  position: relative;
+  height: 18px;
+  border: var(--px) solid var(--line);
+  background:
+    linear-gradient(var(--line), var(--line)) center / var(--px) 100% no-repeat,
+    var(--panel);
+}
+
+.barrow__dino,
+.barrow__you {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+}
+
+.barrow__dino {
+  border: var(--px) solid var(--green);
+  box-sizing: border-box;
+}
+
+.barrow__you {
+  background: var(--pink);
+  outline: var(--px) solid var(--bg);
+}
+
+.legend {
+  font-family: var(--font-display);
+  font-size: 0.48rem;
+  margin: 4px 0 0;
+}
+
 .summary {
   font-family: var(--font-display);
   font-size: 0.5rem;

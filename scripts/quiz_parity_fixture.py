@@ -30,7 +30,7 @@ sys.path.insert(0, str(REPO_ROOT / "src"))
 from dinoclub.quiz import DinoQuiz  # noqa: E402
 
 FIXTURE = REPO_ROOT / "web" / "src" / "app" / "quiz" / "parity.fixture.json"
-DATASET = "mini"
+DATASET = "full"
 SEED = 2024
 N_RANDOM = 40
 
