@@ -14,7 +14,25 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterator, List, Mapping, Optional, Sequence
 
-DATA_DIR = Path(__file__).parent / "data"
+DATA_ROOT = Path(__file__).parent / "data"
+
+#: Which dataset loads when none is named. `full` is the ten-dinosaur,
+#: four-axis version the README documents; `mini` is the four-dinosaur,
+#: two-axis version the website ships.
+DEFAULT_DATASET = "full"
+
+
+def data_dir(dataset: str = DEFAULT_DATASET) -> Path:
+    """Resolve a dataset name to its directory, failing loudly on a typo."""
+    path = DATA_ROOT / dataset
+    if not path.is_dir():
+        available = sorted(d.name for d in DATA_ROOT.iterdir() if d.is_dir())
+        raise ValueError("no dataset {!r}; available: {}".format(dataset, available))
+    return path
+
+
+#: Kept for callers that only ever wanted the default.
+DATA_DIR = DATA_ROOT / DEFAULT_DATASET
 
 Vector = Dict[str, float]
 
@@ -60,8 +78,8 @@ class TraitSpace:
         self.max = float(maximum)
 
     @classmethod
-    def load(cls, path: Optional[Path] = None) -> "TraitSpace":
-        raw = json.loads(Path(path or DATA_DIR / "traits.json").read_text())
+    def load(cls, path: Optional[Path] = None, *, dataset: str = DEFAULT_DATASET) -> "TraitSpace":
+        raw = json.loads(Path(path or data_dir(dataset) / "traits.json").read_text())
         scale = raw.get("scale", {"min": -5, "max": 5})
         return cls(
             [Trait(**t) for t in raw["traits"]],

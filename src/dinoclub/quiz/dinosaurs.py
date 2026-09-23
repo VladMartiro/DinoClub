@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterator, List, Optional, Sequence, Tuple
 
-from .traits import DATA_DIR, TraitSpace, Vector
+from .traits import DEFAULT_DATASET, TraitSpace, Vector, data_dir
 
 
 @dataclass(frozen=True)
@@ -36,9 +36,15 @@ class DinosaurSet:
             self._by_id[d.id] = d
 
     @classmethod
-    def load(cls, space: Optional[TraitSpace] = None, path: Optional[Path] = None) -> "DinosaurSet":
-        space = space or TraitSpace.load()
-        raw = json.loads(Path(path or DATA_DIR / "dinosaurs.json").read_text())
+    def load(
+        cls,
+        space: Optional[TraitSpace] = None,
+        path: Optional[Path] = None,
+        *,
+        dataset: str = DEFAULT_DATASET,
+    ) -> "DinosaurSet":
+        space = space or TraitSpace.load(dataset=dataset)
+        raw = json.loads(Path(path or data_dir(dataset) / "dinosaurs.json").read_text())
         return cls(
             [
                 Dinosaur(

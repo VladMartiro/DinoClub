@@ -1,31 +1,96 @@
 <div class="page wrap mid">
-  <pixel-dino sprite="sauropod" [scale]="6" label="Pixel art sauropod" />
+  @switch (phase()) {
+    <!-- ================= INTRO ================= -->
+    @case ('intro') {
+      <pixel-dino sprite="raptor" [scale]="6" label="Pixel art velociraptor" />
+      <h1>WHICH DINO ARE YOU?</h1>
+      <p class="dim lede">{{ total }} questions. 2 traits. Closest dinosaur wins.</p>
+      <button class="btn" type="button" (click)="start()">START</button>
 
-  <h1>WHICH DINO ARE YOU?</h1>
-  <p class="dim lede">
-    10 questions. 4 traits. Closest dinosaur wins.
-  </p>
-
-  @if (!started()) {
-    <button class="btn" type="button" (click)="start()">START</button>
-  } @else {
-    <div class="box note">
-      <h2>NOT WIRED UP YET</h2>
-      <p class="dim">
-        The scoring algorithm works &mdash; it lives in the Python package. What
-        is missing is the connection between it and this page.
-      </p>
-      <button class="btn btn--alt" type="button" (click)="reset()">BACK</button>
-    </div>
-  }
-
-  <ul class="axes">
-    @for (axis of axes; track axis.high) {
-      <li>
-        <span class="dim">{{ axis.low }}</span>
-        <span class="bar" aria-hidden="true"></span>
-        <span>{{ axis.high }}</span>
-      </li>
+      <ul class="axes">
+        @for (t of engine.space.traits; track t.key) {
+          <li>
+            <span class="dim">{{ t.negative | uppercase }}</span>
+            <span class="bar" aria-hidden="true"></span>
+            <span>{{ t.positive | uppercase }}</span>
+          </li>
+        }
+      </ul>
     }
-  </ul>
+
+    <!-- ================= ASKING ================= -->
+    @case ('asking') {
+      <div class="progress" aria-hidden="true">
+        @for (q of questions; track q.id; let i = $index) {
+          <span class="progress__cell" [class.progress__cell--done]="i < index()" [class.progress__cell--now]="i === index()"></span>
+        }
+      </div>
+      <p class="dim counter">Q {{ index() + 1 }} / {{ total }}</p>
+
+      <h2 class="q">{{ current().text }}</h2>
+
+      <div class="options" role="group" [attr.aria-label]="current().text">
+        @for (o of current().options; track o.id; let i = $index) {
+          <button class="opt" type="button" (click)="answer(o.id)">
+            <span class="opt__key" aria-hidden="true">{{ i + 1 }}</span>
+            <span>{{ o.text }}</span>
+          </button>
+        }
+      </div>
+
+      <button class="back" type="button" (click)="back()">&larr; BACK</button>
+    }
+
+    <!-- ================= RESULT ================= -->
+    @case ('result') {
+      @if (result(); as r) {
+        <p class="dim youare">YOU ARE</p>
+        <pixel-dino [sprite]="sprite(r.winner.id)" [scale]="8" [label]="'Pixel art ' + r.winner.name" />
+        <h1>{{ r.winner.name | uppercase }}</h1>
+        <p class="tag">{{ r.winner.tagline }}</p>
+        <p class="match">{{ r.matches[0].matchPercent | number: '1.0-0' }}% MATCH</p>
+        <p class="blurb">{{ r.winner.blurb }}</p>
+
+        <!-- 2D map: your dot over the four corners -->
+        <div class="map" role="img" [attr.aria-label]="'Your position: ' + r.summary.join(', ')">
+          <span class="map__lbl map__lbl--top">{{ yTrait.positive | uppercase }}</span>
+          <span class="map__lbl map__lbl--bottom">{{ yTrait.negative | uppercase }}</span>
+          <span class="map__lbl map__lbl--left">{{ xTrait.negative | uppercase }}</span>
+          <span class="map__lbl map__lbl--right">{{ xTrait.positive | uppercase }}</span>
+          <div class="map__grid">
+            <div class="map__plot">
+            @for (d of engine.dinosaurs; track d.id) {
+              <div
+                class="map__dino"
+                [class.map__dino--win]="d.id === r.winner.id"
+                [style.left.%]="pct(d.traits[xTrait.key])"
+                [style.top.%]="pct(d.traits[yTrait.key], true)"
+              >
+                <pixel-dino [sprite]="sprite(d.id)" [scale]="2" [flip]="d.traits[xTrait.key] < 0" />
+              </div>
+            }
+            <div
+              class="map__you blink"
+              [style.left.%]="pct(r.profile[xTrait.key])"
+              [style.top.%]="pct(r.profile[yTrait.key], true)"
+            ></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="dim summary">{{ r.summary.join(' · ') | uppercase }}</p>
+
+        <ul class="others">
+          @for (m of others(r); track m.dinosaur.id) {
+            <li>
+              <span>{{ m.dinosaur.name | uppercase }}</span>
+              <span class="dim">{{ m.matchPercent | number: '1.0-0' }}%</span>
+            </li>
+          }
+        </ul>
+
+        <button class="btn btn--alt" type="button" (click)="start()">PLAY AGAIN</button>
+      }
+    }
+  }
 </div>

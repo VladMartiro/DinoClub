@@ -96,7 +96,7 @@ def test_standing_on_a_dinosaur_gives_that_dinosaur(quiz):
 
 
 def test_match_percent_spans_the_box_diagonal(quiz):
-    assert quiz.space.max_distance == pytest.approx(math.sqrt(4 * 100))
+    assert quiz.space.max_distance == pytest.approx(math.sqrt(len(quiz.space) * 100))
     assert quiz.space.match_percent(0.0) == pytest.approx(100.0)
     assert quiz.space.match_percent(quiz.space.max_distance) == pytest.approx(0.0)
 

@@ -24,7 +24,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 from .dinosaurs import DinosaurSet
 from .questions import QuestionBank
 from .scoring import axis_scales
-from .traits import TraitSpace
+from .traits import DEFAULT_DATASET, TraitSpace
 
 
 def _make_matcher(bank: QuestionBank, dinosaurs: DinosaurSet, *,
@@ -286,11 +286,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--sweep", action="store_true",
                         help="print the calibration trade-off curve and exit")
+    parser.add_argument("--dataset", default=DEFAULT_DATASET,
+                        help="which data/<name>/ to audit (default: %(default)s)")
     args = parser.parse_args(argv)
 
-    space = TraitSpace.load()
-    dinosaurs = DinosaurSet.load(space)
-    bank = QuestionBank.load(space)
+    space = TraitSpace.load(dataset=args.dataset)
+    dinosaurs = DinosaurSet.load(space, dataset=args.dataset)
+    bank = QuestionBank.load(space, dataset=args.dataset)
+    print("dataset: {}".format(args.dataset))
     common = {"sample": args.sample, "seed": args.seed}
 
     total = total_answer_space(bank)

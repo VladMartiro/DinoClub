@@ -31,10 +31,10 @@ from .scoring import (
     rank,
 )
 from .session import QuizSession
-from .traits import Trait, TraitSpace
+from .traits import DEFAULT_DATASET, Trait, TraitSpace, data_dir
 
 __all__ = [
-    "DinoQuiz",
+    "DinoQuiz", "DEFAULT_DATASET", "data_dir",
     "Trait", "TraitSpace",
     "Dinosaur", "DinosaurSet",
     "Option", "Question", "QuestionBank",
@@ -52,12 +52,12 @@ class DinoQuiz:
     bank: QuestionBank
 
     @classmethod
-    def load(cls, space: Optional[TraitSpace] = None) -> "DinoQuiz":
-        space = space or TraitSpace.load()
+    def load(cls, space: Optional[TraitSpace] = None, *, dataset: str = DEFAULT_DATASET) -> "DinoQuiz":
+        space = space or TraitSpace.load(dataset=dataset)
         return cls(
             space=space,
-            dinosaurs=DinosaurSet.load(space),
-            bank=QuestionBank.load(space),
+            dinosaurs=DinosaurSet.load(space, dataset=dataset),
+            bank=QuestionBank.load(space, dataset=dataset),
         )
 
     def start(self, **kwargs) -> QuizSession:

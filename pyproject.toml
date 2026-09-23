@@ -37,7 +37,7 @@ dino-recommend-eval = "dinoclub.recommend.eval.harness:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-"dinoclub.quiz" = ["data/*.json"]
+"dinoclub.quiz" = ["data/*/*.json"]
 "dinoclub.recommend" = ["data/*.json"]
 
 [tool.pytest.ini_options]

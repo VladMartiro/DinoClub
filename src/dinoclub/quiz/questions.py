@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterator, List, Mapping, Optional, Sequence
 
-from .traits import DATA_DIR, TraitSpace, Vector
+from .traits import DEFAULT_DATASET, TraitSpace, Vector, data_dir
 
 
 @dataclass(frozen=True)
@@ -80,9 +80,15 @@ class QuestionBank:
             self._by_id[question.id] = question
 
     @classmethod
-    def load(cls, space: Optional[TraitSpace] = None, path: Optional[Path] = None) -> "QuestionBank":
-        space = space or TraitSpace.load()
-        raw = json.loads(Path(path or DATA_DIR / "questions.json").read_text())
+    def load(
+        cls,
+        space: Optional[TraitSpace] = None,
+        path: Optional[Path] = None,
+        *,
+        dataset: str = DEFAULT_DATASET,
+    ) -> "QuestionBank":
+        space = space or TraitSpace.load(dataset=dataset)
+        raw = json.loads(Path(path or data_dir(dataset) / "questions.json").read_text())
         return cls(
             [
                 Question(

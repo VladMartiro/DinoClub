@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "note": "Eight questions, four options each, one option per quadrant so the bank stays balanced. Run `dino-quiz-audit --dataset mini` after editing.",
+  "questions": [
+    {
+      "id": "charging",
+      "text": "Something enormous is charging straight at you.",
+      "options": [
+        {
+          "id": "charge",
+          "text": "Charge right back.",
+          "effects": {
+            "approach": 4,
+            "instinct": 5
+          }
+        },
+        {
+          "id": "flank",
+          "text": "Sidestep, then hit it from behind.",
+          "effects": {
+            "approach": -4,
+            "instinct": 4
+          }
+        },
+        {
+          "id": "brace",
+          "text": "Plant your feet and let it break on you.",
+          "effects": {
+            "approach": 5,
+            "instinct": -4
+          }
+        },
+        {
+          "id": "gone",
+          "text": "You were never there.",
+          "effects": {
+            "approach": -5,
+            "instinct": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "group-project",
+      "text": "Group project. Which one are you?",
+      "options": [
+        {
+          "id": "allnighter",
+          "text": "The one who does all of it in one night.",
+          "effects": {
+            "approach": 3,
+            "instinct": 4
+          }
+        },
+        {
+          "id": "shortcut",
+          "text": "The one who finds the shortcut.",
+          "effects": {
+            "approach": -3,
+            "instinct": 2
+          }
+        },
+        {
+          "id": "carry",
+          "text": "The one quietly carrying everyone.",
+          "effects": {
+            "approach": 3,
+            "instinct": -3
+          }
+        },
+        {
+          "id": "done",
+          "text": "The one who is somehow already done.",
+          "effects": {
+            "approach": -3,
+            "instinct": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "weapon",
+      "text": "Pick a weapon.",
+      "options": [
+        {
+          "id": "heavy",
+          "text": "Whatever is heaviest.",
+          "effects": {
+            "approach": 5,
+            "instinct": 3
+          }
+        },
+        {
+          "id": "sharp",
+          "text": "Something fast and sharp.",
+          "effects": {
+            "approach": -4,
+            "instinct": 4
+          }
+        },
+        {
+          "id": "shield",
+          "text": "A shield.",
+          "effects": {
+            "approach": 3,
+            "instinct": -4
+          }
+        },
+        {
+          "id": "shoes",
+          "text": "Running shoes.",
+          "effects": {
+            "approach": -5,
+            "instinct": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "queue",
+      "text": "Someone cuts in front of you in a queue.",
+      "options": [
+        {
+          "id": "loud",
+          "text": "Say something. Loudly.",
+          "effects": {
+            "approach": 2,
+            "instinct": 5
+          }
+        },
+        {
+          "id": "slip",
+          "text": "Slip back past them without a word.",
+          "effects": {
+            "approach": -4,
+            "instinct": 3
+          }
+        },
+        {
+          "id": "stare",
+          "text": "Hold your ground and stare.",
+          "effects": {
+            "approach": 4,
+            "instinct": -3
+          }
+        },
+        {
+          "id": "letgo",
+          "text": "Let it go. Not worth it.",
+          "effects": {
+            "approach": -2,
+            "instinct": -5
+          }
+        }
+      ]
+    },
+    {
+      "id": "saturday",
+      "text": "Ideal Saturday.",
+      "options": [
+        {
+          "id": "gym",
+          "text": "Gym, then a fight. In a video game.",
+          "effects": {
+            "approach": 4,
+            "instinct": 3
+          }
+        },
+        {
+          "id": "new",
+          "text": "Somewhere new, fast, no plan.",
+          "effects": {
+            "approach": -3,
+            "instinct": 2
+          }
+        },
+        {
+          "id": "fortress",
+          "text": "Home. Fortress. Snacks.",
+          "effects": {
+            "approach": 3,
+            "instinct": -4
+          }
+        },
+        {
+          "id": "run",
+          "text": "A long run before anyone else is awake.",
+          "effects": {
+            "approach": -4,
+            "instinct": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "monster",
+      "text": "The film's monster finally shows up. You:",
+      "options": [
+        {
+          "id": "root",
+          "text": "Want it to win.",
+          "effects": {
+            "approach": 4,
+            "instinct": 4
+          }
+        },
+        {
+          "id": "time",
+          "text": "Are timing its footsteps.",
+          "effects": {
+            "approach": -3,
+            "instinct": 3
+          }
+        },
+        {
+          "id": "grip",
+          "text": "Grip the armrest and do not move.",
+          "effects": {
+            "approach": 3,
+            "instinct": -4
+          }
+        },
+        {
+          "id": "exits",
+          "text": "Already know where the exits are.",
+          "effects": {
+            "approach": -4,
+            "instinct": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "argument",
+      "text": "How do you win an argument?",
+      "options": [
+        {
+          "id": "volume",
+          "text": "Volume.",
+          "effects": {
+            "approach": 4,
+            "instinct": 4
+          }
+        },
+        {
+          "id": "sentence",
+          "text": "One precise sentence.",
+          "effects": {
+            "approach": -4,
+            "instinct": 4
+          }
+        },
+        {
+          "id": "refuse",
+          "text": "Refuse to lose. Ever.",
+          "effects": {
+            "approach": 4,
+            "instinct": -3
+          }
+        },
+        {
+          "id": "leave",
+          "text": "Leave before it starts.",
+          "effects": {
+            "approach": -3,
+            "instinct": -5
+          }
+        }
+      ]
+    },
+    {
+      "id": "walk",
+      "text": "Describe your walk.",
+      "options": [
+        {
+          "id": "shakes",
+          "text": "The ground shakes a little.",
+          "effects": {
+            "approach": 5,
+            "instinct": 3
+          }
+        },
+        {
+          "id": "corners",
+          "text": "Fast. Sharp corners.",
+          "effects": {
+            "approach": -4,
+            "instinct": 3
+          }
+        },
+        {
+          "id": "steady",
+          "text": "Steady. Unhurried. Immovable.",
+          "effects": {
+            "approach": 4,
+            "instinct": -3
+          }
+        },
+        {
+          "id": "light",
+          "text": "Light. Quick. Gone.",
+          "effects": {
+            "approach": -5,
+            "instinct": -3
+          }
+        }
+      ]
+    }
+  ]
+}

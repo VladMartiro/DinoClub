@@ -17,6 +17,15 @@ from dinoclub.quiz.analysis import (
 SAMPLE = 4000
 
 
+def _norms_all_equal(quiz) -> bool:
+    """With every dinosaur the same distance from centre, |v|^2 is a constant
+    across candidates and the winner depends on direction alone -- so no
+    rescaling of the user vector can change it. Tests that expect calibration
+    to *change* outcomes have to know this."""
+    norms = list(quiz.dinosaurs.norms().values())
+    return max(norms) - min(norms) < 1e-9
+
+
 def test_answer_space_size(quiz):
     assert total_answer_space(quiz.bank) == 4 ** len(quiz.bank)
 
@@ -68,7 +77,11 @@ def test_calibration_preserves_magnitude_information(quiz):
                                 apply_normalisation=False, sample=SAMPLE, seed=1)
     calibrated = magnitude_sensitivity(quiz.bank, quiz.dinosaurs,
                                        apply_normalisation=True, sample=SAMPLE, seed=1)
-    assert calibrated > raw
+    if _norms_all_equal(quiz):
+        # Direction-only matching: scale is invisible, so both must agree.
+        assert calibrated == pytest.approx(raw)
+    else:
+        assert calibrated > raw
 
 
 def test_spread_trades_clamping_against_rarity(quiz):
@@ -83,7 +96,10 @@ def test_spread_trades_clamping_against_rarity(quiz):
                          spread=0.55, sample=40000, seed=1)
     high_wins = _tabulate(quiz.bank, quiz.dinosaurs, apply_normalisation=True,
                           spread=1.15, sample=40000, seed=1)
-    assert min(low_wins.values()) < min(high_wins.values())
+    if _norms_all_equal(quiz):
+        assert low_wins == high_wins
+    else:
+        assert min(low_wins.values()) < min(high_wins.values())
 
 
 def test_default_spread_is_plain_moment_matching(quiz):

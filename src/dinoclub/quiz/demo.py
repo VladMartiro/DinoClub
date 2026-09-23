@@ -12,7 +12,7 @@ import argparse
 import random
 from typing import Optional, Sequence
 
-from . import DinoQuiz
+from . import DEFAULT_DATASET, DinoQuiz
 from .scoring import Result, axis_scales
 
 WIDTH = 33  # odd, so there is an exact centre cell for 0
@@ -53,8 +53,9 @@ def render_radar(result: Result) -> str:
     return "\n".join(lines)
 
 
-def run(auto: bool = False, seed: int = 0, show_math: bool = False) -> int:
-    quiz = DinoQuiz.load()
+def run(auto: bool = False, seed: int = 0, show_math: bool = False,
+        dataset: str = DEFAULT_DATASET) -> int:
+    quiz = DinoQuiz.load(dataset=dataset)
     session = quiz.start()
     rng = random.Random(seed)
 
@@ -123,8 +124,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--show-math", action="store_true",
                         help="print the raw totals, scale factors and final coordinates")
+    parser.add_argument("--dataset", default=DEFAULT_DATASET)
     args = parser.parse_args(argv)
-    return run(auto=args.auto, seed=args.seed, show_math=args.show_math)
+    return run(auto=args.auto, seed=args.seed, show_math=args.show_math, dataset=args.dataset)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "scale": {"min": -5, "max": 5},
+  "note": "The two-axis version the website ships. Four dinosaurs, one per quadrant, all at the same distance from centre -- which is what makes every outcome equally reachable (see README, 'The honest cost').",
+  "traits": [
+    {
+      "key": "approach",
+      "name": "Approach",
+      "negative": "Agility",
+      "positive": "Power",
+      "question": "Do you outmuscle it, or outmanoeuvre it?"
+    },
+    {
+      "key": "instinct",
+      "name": "Instinct",
+      "negative": "Defensive",
+      "positive": "Aggressive",
+      "question": "Do you make the first move, or wait and see?"
+    }
+  ]
+}

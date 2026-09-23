@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "note": "One dinosaur per quadrant, all at (+-4, +-4). Equal norms mean the |v|^2 term in the distance is the same for every candidate, so no dinosaur is structurally rarer than another.",
+  "dinosaurs": [
+    {
+      "id": "tyrannosaurus",
+      "name": "Tyrannosaurus rex",
+      "tagline": "Straight through it.",
+      "blurb": "You do not go around things. When something needs doing you do it directly, loudly, and now. Subtlety is for animals with smaller teeth.",
+      "traits": {"approach": 4, "instinct": 4}
+    },
+    {
+      "id": "velociraptor",
+      "name": "Velociraptor",
+      "tagline": "Already behind you.",
+      "blurb": "Fast, sharp, and three moves ahead. You do not win by being strongest -- you win by being where nobody expected, slightly before they expected it.",
+      "traits": {"approach": -4, "instinct": 4}
+    },
+    {
+      "id": "ankylosaurus",
+      "name": "Ankylosaurus",
+      "tagline": "Nothing gets through.",
+      "blurb": "You are very hard to knock over and you know it. You do not start things, but you finish every one that gets started at you, and you are still standing afterwards.",
+      "traits": {"approach": 4, "instinct": -4}
+    },
+    {
+      "id": "gallimimus",
+      "name": "Gallimimus",
+      "tagline": "Saw it coming. Already gone.",
+      "blurb": "You read the room faster than anyone in it. You are not scared of the fight -- you have just noticed it is optional, and the exit is right there.",
+      "traits": {"approach": -4, "instinct": -4}
+    }
+  ]
+}
