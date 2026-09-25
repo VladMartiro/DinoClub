@@ -21,10 +21,10 @@ point in the same box.
 
 | Axis | −5 | +5 |
 |---|---|---|
-| `diet` | Herbivore / Forager | Carnivore / Active Hunter |
-| `social` | Herd / Pack Player | Solitary Apex |
-| `strategy` | Heavy Armor / Defense | High Speed / Agility |
-| `temperament` | Brute Force / Instinct | Calculating / Cunning |
+| `diet` | Gatherer | Hunter |
+| `social` | Team player | Lone dino |
+| `strategy` | Tough and durable | Fast and agile |
+| `temperament` | Strong brute forcer | Smart and cunning |
 
 Each dinosaur is a fixed ideal profile:
 

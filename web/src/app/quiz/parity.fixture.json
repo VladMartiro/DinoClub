@@ -123,8 +123,8 @@
           }
         ],
         "summary": [
-          "strongly Carnivore / Active Hunter",
-          "strongly Solitary Apex"
+          "strongly Hunter",
+          "strongly Lone dino"
         ]
       }
     },
@@ -248,8 +248,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "clearly Herd / Pack Player"
+          "strongly Gatherer",
+          "clearly Team player"
         ]
       }
     },
@@ -332,8 +332,8 @@
           }
         ],
         "summary": [
-          "balanced between Herbivore / Forager and Carnivore / Active Hunter",
-          "balanced between Herd / Pack Player and Solitary Apex"
+          "balanced between Gatherer and Hunter",
+          "balanced between Team player and Lone dino"
         ]
       }
     },
@@ -421,8 +421,8 @@
           }
         ],
         "summary": [
-          "leans Herd / Pack Player",
-          "leans Calculating / Cunning"
+          "leans Team player",
+          "leans Smart and cunning"
         ]
       }
     },
@@ -526,8 +526,8 @@
           }
         ],
         "summary": [
-          "strongly Brute Force / Instinct",
-          "clearly Carnivore / Active Hunter"
+          "strongly Strong brute forcer",
+          "clearly Hunter"
         ]
       }
     },
@@ -651,8 +651,8 @@
           }
         ],
         "summary": [
-          "clearly High Speed / Agility",
-          "leans Calculating / Cunning"
+          "clearly Fast and agile",
+          "leans Smart and cunning"
         ]
       }
     },
@@ -776,8 +776,8 @@
           }
         ],
         "summary": [
-          "strongly Herd / Pack Player",
-          "clearly Calculating / Cunning"
+          "strongly Team player",
+          "clearly Smart and cunning"
         ]
       }
     },
@@ -901,8 +901,8 @@
           }
         ],
         "summary": [
-          "clearly Carnivore / Active Hunter",
-          "leans Solitary Apex"
+          "clearly Hunter",
+          "leans Lone dino"
         ]
       }
     },
@@ -1026,8 +1026,8 @@
           }
         ],
         "summary": [
-          "strongly Heavy Armor / Defense",
-          "clearly Calculating / Cunning"
+          "strongly Tough and durable",
+          "clearly Smart and cunning"
         ]
       }
     },
@@ -1151,8 +1151,8 @@
           }
         ],
         "summary": [
-          "strongly Herd / Pack Player",
-          "strongly High Speed / Agility"
+          "strongly Team player",
+          "strongly Fast and agile"
         ]
       }
     },
@@ -1276,8 +1276,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "strongly Herd / Pack Player"
+          "strongly Gatherer",
+          "strongly Team player"
         ]
       }
     },
@@ -1401,8 +1401,8 @@
           }
         ],
         "summary": [
-          "strongly High Speed / Agility",
-          "strongly Carnivore / Active Hunter"
+          "strongly Fast and agile",
+          "strongly Hunter"
         ]
       }
     },
@@ -1526,8 +1526,8 @@
           }
         ],
         "summary": [
-          "clearly High Speed / Agility",
-          "clearly Calculating / Cunning"
+          "clearly Fast and agile",
+          "clearly Smart and cunning"
         ]
       }
     },
@@ -1651,8 +1651,8 @@
           }
         ],
         "summary": [
-          "clearly Herd / Pack Player",
-          "leans Heavy Armor / Defense"
+          "clearly Team player",
+          "leans Tough and durable"
         ]
       }
     },
@@ -1776,8 +1776,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "clearly Heavy Armor / Defense"
+          "strongly Gatherer",
+          "clearly Tough and durable"
         ]
       }
     },
@@ -1901,8 +1901,8 @@
           }
         ],
         "summary": [
-          "clearly Carnivore / Active Hunter",
-          "leans Solitary Apex"
+          "clearly Hunter",
+          "leans Lone dino"
         ]
       }
     },
@@ -2026,8 +2026,8 @@
           }
         ],
         "summary": [
-          "strongly Carnivore / Active Hunter",
-          "strongly Solitary Apex"
+          "strongly Hunter",
+          "strongly Lone dino"
         ]
       }
     },
@@ -2151,8 +2151,8 @@
           }
         ],
         "summary": [
-          "strongly Calculating / Cunning",
-          "strongly Carnivore / Active Hunter"
+          "strongly Smart and cunning",
+          "strongly Hunter"
         ]
       }
     },
@@ -2276,8 +2276,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "strongly Herd / Pack Player"
+          "strongly Gatherer",
+          "strongly Team player"
         ]
       }
     },
@@ -2401,8 +2401,8 @@
           }
         ],
         "summary": [
-          "leans Herd / Pack Player",
-          "leans Herbivore / Forager"
+          "leans Team player",
+          "leans Gatherer"
         ]
       }
     },
@@ -2526,8 +2526,8 @@
           }
         ],
         "summary": [
-          "strongly Carnivore / Active Hunter",
-          "strongly Solitary Apex"
+          "strongly Hunter",
+          "strongly Lone dino"
         ]
       }
     },
@@ -2651,8 +2651,8 @@
           }
         ],
         "summary": [
-          "clearly Calculating / Cunning",
-          "clearly Herd / Pack Player"
+          "clearly Smart and cunning",
+          "clearly Team player"
         ]
       }
     },
@@ -2776,8 +2776,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "strongly Herd / Pack Player"
+          "strongly Gatherer",
+          "strongly Team player"
         ]
       }
     },
@@ -2901,8 +2901,8 @@
           }
         ],
         "summary": [
-          "leans Calculating / Cunning",
-          "leans Herbivore / Forager"
+          "leans Smart and cunning",
+          "leans Gatherer"
         ]
       }
     },
@@ -3026,8 +3026,8 @@
           }
         ],
         "summary": [
-          "strongly Carnivore / Active Hunter",
-          "strongly High Speed / Agility"
+          "strongly Hunter",
+          "strongly Fast and agile"
         ]
       }
     },
@@ -3151,8 +3151,8 @@
           }
         ],
         "summary": [
-          "strongly Carnivore / Active Hunter",
-          "strongly Heavy Armor / Defense"
+          "strongly Hunter",
+          "strongly Tough and durable"
         ]
       }
     },
@@ -3276,8 +3276,8 @@
           }
         ],
         "summary": [
-          "strongly Herd / Pack Player",
-          "strongly Calculating / Cunning"
+          "strongly Team player",
+          "strongly Smart and cunning"
         ]
       }
     },
@@ -3401,8 +3401,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "strongly Herd / Pack Player"
+          "strongly Gatherer",
+          "strongly Team player"
         ]
       }
     },
@@ -3526,8 +3526,8 @@
           }
         ],
         "summary": [
-          "strongly High Speed / Agility",
-          "leans Herd / Pack Player"
+          "strongly Fast and agile",
+          "leans Team player"
         ]
       }
     },
@@ -3651,8 +3651,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "strongly Herd / Pack Player"
+          "strongly Gatherer",
+          "strongly Team player"
         ]
       }
     },
@@ -3776,8 +3776,8 @@
           }
         ],
         "summary": [
-          "clearly Calculating / Cunning",
-          "clearly Solitary Apex"
+          "clearly Smart and cunning",
+          "clearly Lone dino"
         ]
       }
     },
@@ -3901,8 +3901,8 @@
           }
         ],
         "summary": [
-          "strongly Herbivore / Forager",
-          "clearly Calculating / Cunning"
+          "strongly Gatherer",
+          "clearly Smart and cunning"
         ]
       }
     },
@@ -4026,8 +4026,8 @@
           }
         ],
         "summary": [
-          "strongly High Speed / Agility",
-          "strongly Herd / Pack Player"
+          "strongly Fast and agile",
+          "strongly Team player"
         ]
       }
     },
@@ -4151,8 +4151,8 @@
           }
         ],
         "summary": [
-          "clearly Heavy Armor / Defense",
-          "leans Solitary Apex"
+          "clearly Tough and durable",
+          "leans Lone dino"
         ]
       }
     },
@@ -4276,8 +4276,8 @@
           }
         ],
         "summary": [
-          "strongly Calculating / Cunning",
-          "clearly Herbivore / Forager"
+          "strongly Smart and cunning",
+          "clearly Gatherer"
         ]
       }
     },
@@ -4401,8 +4401,8 @@
           }
         ],
         "summary": [
-          "strongly Carnivore / Active Hunter",
-          "clearly Solitary Apex"
+          "strongly Hunter",
+          "clearly Lone dino"
         ]
       }
     },
@@ -4526,8 +4526,8 @@
           }
         ],
         "summary": [
-          "strongly Herd / Pack Player",
-          "clearly High Speed / Agility"
+          "strongly Team player",
+          "clearly Fast and agile"
         ]
       }
     },
@@ -4651,8 +4651,8 @@
           }
         ],
         "summary": [
-          "strongly Brute Force / Instinct",
-          "strongly High Speed / Agility"
+          "strongly Strong brute forcer",
+          "strongly Fast and agile"
         ]
       }
     },
@@ -4776,8 +4776,8 @@
           }
         ],
         "summary": [
-          "strongly Solitary Apex",
-          "strongly Heavy Armor / Defense"
+          "strongly Lone dino",
+          "strongly Tough and durable"
         ]
       }
     },
@@ -4901,8 +4901,8 @@
           }
         ],
         "summary": [
-          "clearly High Speed / Agility",
-          "leans Solitary Apex"
+          "clearly Fast and agile",
+          "leans Lone dino"
         ]
       }
     },
@@ -5026,8 +5026,8 @@
           }
         ],
         "summary": [
-          "strongly High Speed / Agility",
-          "strongly Herbivore / Forager"
+          "strongly Fast and agile",
+          "strongly Gatherer"
         ]
       }
     },
@@ -5151,8 +5151,8 @@
           }
         ],
         "summary": [
-          "strongly High Speed / Agility",
-          "strongly Carnivore / Active Hunter"
+          "strongly Fast and agile",
+          "strongly Hunter"
         ]
       }
     },
@@ -5276,8 +5276,8 @@
           }
         ],
         "summary": [
-          "clearly Heavy Armor / Defense",
-          "clearly Brute Force / Instinct"
+          "clearly Tough and durable",
+          "clearly Strong brute forcer"
         ]
       }
     },
@@ -5401,8 +5401,8 @@
           }
         ],
         "summary": [
-          "strongly Herd / Pack Player",
-          "leans High Speed / Agility"
+          "strongly Team player",
+          "leans Fast and agile"
         ]
       }
     },
@@ -5526,8 +5526,8 @@
           }
         ],
         "summary": [
-          "leans Herd / Pack Player",
-          "balanced between Brute Force / Instinct and Calculating / Cunning"
+          "leans Team player",
+          "balanced between Strong brute forcer and Smart and cunning"
         ]
       }
     }

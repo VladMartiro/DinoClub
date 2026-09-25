@@ -1,34 +1,37 @@
 {
   "schema_version": 1,
-  "scale": {"min": -5, "max": 5},
+  "scale": {
+    "min": -5,
+    "max": 5
+  },
   "note": "Four behavioral axes. Every answer option and every dinosaur is a point in this same 4D box, which is what makes Euclidean matching meaningful.",
   "traits": [
     {
       "key": "diet",
       "name": "Dietary Strategy",
-      "negative": "Herbivore / Forager",
-      "positive": "Carnivore / Active Hunter",
+      "negative": "Gatherer",
+      "positive": "Hunter",
       "question": "Do you go and take what you want, or gather what you need?"
     },
     {
       "key": "social",
       "name": "Social Mechanics",
-      "negative": "Herd / Pack Player",
-      "positive": "Solitary Apex",
+      "negative": "Team player",
+      "positive": "Lone dino",
       "question": "Do you operate alone, or as part of something bigger?"
     },
     {
       "key": "strategy",
       "name": "Environmental Strategy",
-      "negative": "Heavy Armor / Defense",
-      "positive": "High Speed / Agility",
+      "negative": "Tough and durable",
+      "positive": "Fast and agile",
       "question": "Do you move fast and stay light, or dig in and hold?"
     },
     {
       "key": "temperament",
       "name": "Cognitive Approach",
-      "negative": "Brute Force / Instinct",
-      "positive": "Calculating / Cunning",
+      "negative": "Strong brute forcer",
+      "positive": "Smart and cunning",
       "question": "Do you think your way through, or push your way through?"
     }
   ]
