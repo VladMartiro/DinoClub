@@ -2,19 +2,27 @@
    Hard edges, 3px borders, offset shadows with no blur, one accent colour. */
 
 :root {
-  --bg: #0e1108;
-  --panel: #161b0e;
-  --line: #3f5223;
+  /* Palette lifted from the club logo: navy linework, Carolina blue fills,
+     Old Well stone for the page. Arcade treatment is unchanged -- hard edges,
+     3px borders, offset shadows with no blur, pixel type. */
+  --bg: #f4f1e9;
+  --panel: #ffffff;
+  --line: #13294b;
 
-  --text: #e8ffd9;
-  --dim: #8fa374;
+  --text: #13294b;
+  --dim: #667085;
 
-  --green: #9ef01a;
-  --amber: #ffb703;
-  --pink: #ff4d6d;
-  --purple: #a78bfa;
+  /* Carolina blue is a fill, never text: at 2.5:1 on the cream page it is
+     unreadable as type. Anything sitting on it uses navy. */
+  --accent: #4b9cd3;
+  --accent-ink: #13294b;
+  --accent-deep: #2f7cb0;
 
-  --ink: #0e1108;
+  --warm: #b23a48;
+  --alert: #c2334d;
+  --discord: #4a56d6;
+
+  --shadow: rgba(19, 41, 75, 0.28);
 
   --font-display: 'Press Start 2P', monospace;
   --font-body: 'Silkscreen', 'Courier New', monospace;
@@ -39,18 +47,12 @@ body {
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.65;
-  /* Faint scanlines. Kept low-contrast so text stays readable. */
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.22) 0px,
-    rgba(0, 0, 0, 0.22) 1px,
-    transparent 1px,
-    transparent 3px
-  );
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Nothing in an arcade cabinet is anti-aliased into a soft gradient. */
-img {
+/* Pixel art must not be smoothed when scaled. Scoped to sprites: the club
+   logo is smooth artwork and needs normal downscaling. */
+.pixelated {
   image-rendering: pixelated;
 }
 
@@ -65,12 +67,12 @@ h3 {
 
 h1 {
   font-size: clamp(1.1rem, 4.2vw, 1.9rem);
-  color: var(--green);
+  color: var(--text);
 }
 
 h2 {
   font-size: clamp(0.82rem, 2.6vw, 1rem);
-  color: var(--amber);
+  color: var(--warm);
 }
 
 h3 {
@@ -83,7 +85,7 @@ p {
 }
 
 a {
-  color: var(--green);
+  color: var(--accent-deep);
 }
 
 /* Underlines belong on links inside prose, not on buttons or nav chrome. */
@@ -114,7 +116,7 @@ a {
 .box {
   border: var(--px) solid var(--line);
   background: var(--panel);
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.55);
+  box-shadow: 6px 6px 0 var(--shadow);
   padding: 20px;
 }
 
@@ -125,19 +127,19 @@ a {
   font-size: 0.7rem;
   line-height: 1;
   padding: 15px 20px;
-  border: var(--px) solid var(--green);
-  background: var(--green);
-  color: var(--ink);
+  border: var(--px) solid var(--line);
+  background: var(--accent);
+  color: var(--accent-ink);
   cursor: pointer;
   text-decoration: none;
   box-shadow: 5px 5px 0 var(--line);
-  transition: transform 0.05s steps(2), box-shadow 0.05s steps(2);
+  transition: transform 0.05s steps(2), background 0.05s steps(2);
 }
 
 .btn:hover {
   text-decoration: none;
-  background: var(--amber);
-  border-color: var(--amber);
+  background: var(--line);
+  color: var(--panel);
 }
 
 .btn:active {
@@ -146,18 +148,18 @@ a {
 }
 
 .btn:focus-visible {
-  outline: var(--px) solid var(--amber);
+  outline: var(--px) solid var(--warm);
   outline-offset: 4px;
 }
 
 .btn--alt {
-  background: transparent;
-  color: var(--green);
+  background: var(--panel);
+  color: var(--text);
 }
 
 .btn--alt:hover {
-  background: var(--amber);
-  color: var(--ink);
+  background: var(--line);
+  color: var(--panel);
 }
 
 /* --- blink: the "insert coin" cadence --- */

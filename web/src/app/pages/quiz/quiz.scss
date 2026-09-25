@@ -3,7 +3,7 @@
 }
 
 .mid > pixel-dino {
-  color: var(--amber);
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
@@ -14,7 +14,7 @@
 /* Accurate, not a joke: the whole engine runs in the browser, so there is
    nothing to send anywhere. */
 .honest {
-  color: var(--pink);
+  color: var(--alert);
   max-width: 46ch;
   margin: 16px auto 30px;
   text-wrap: balance;
@@ -57,7 +57,7 @@
 
 .axes li span:last-child {
   text-align: left;
-  color: var(--green);
+  color: var(--accent);
 }
 
 .bar {
@@ -80,12 +80,12 @@
 }
 
 .progress__cell--done {
-  background: var(--green);
-  border-color: var(--green);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .progress__cell--now {
-  border-color: var(--amber);
+  border-color: var(--warm);
 }
 
 .counter {
@@ -121,13 +121,13 @@
   color: var(--text);
   background: var(--panel);
   border: var(--px) solid var(--line);
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.55);
+  box-shadow: 5px 5px 0 var(--shadow);
   cursor: pointer;
 }
 
 .opt:hover,
 .opt:focus-visible {
-  border-color: var(--green);
+  border-color: var(--accent);
   outline: none;
 }
 
@@ -139,7 +139,7 @@
 .opt__key {
   font-family: var(--font-display);
   font-size: 0.6rem;
-  color: var(--amber);
+  color: var(--warm);
   border: var(--px) solid var(--line);
   padding: 6px 0;
   text-align: center;
@@ -167,14 +167,14 @@
 }
 
 .tag {
-  color: var(--amber);
+  color: var(--warm);
   margin: 10px 0 4px;
 }
 
 .match {
   font-family: var(--font-display);
   font-size: 0.72rem;
-  color: var(--green);
+  color: var(--accent);
   margin: 0 0 18px;
 }
 
@@ -250,7 +250,7 @@
 }
 
 .map__dino--win {
-  color: var(--green);
+  color: var(--accent);
 }
 
 .map__you {
@@ -258,7 +258,7 @@
   width: 14px;
   height: 14px;
   transform: translate(-50%, -50%);
-  background: var(--pink);
+  background: var(--alert);
   outline: var(--px) solid var(--bg);
   animation: blink 0.5s steps(1, end) 4;
 }
@@ -285,7 +285,7 @@
 
 .barrow__lbl:last-child {
   text-align: left;
-  color: var(--green);
+  color: var(--accent);
 }
 
 .barrow__track {
@@ -322,12 +322,12 @@
 .barrow__dino {
   width: 19px;
   height: 19px;
-  border: var(--px) solid var(--green);
+  border: var(--px) solid var(--accent);
   box-sizing: border-box;
 }
 
 .barrow__you {
-  background: var(--pink);
+  background: var(--alert);
   outline: var(--px) solid var(--bg);
   /* Flashes for 2s to draw the eye, then holds. An infinite blink left the
      single most important mark on the chart invisible half the time. */

@@ -17,15 +17,23 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--green);
+  gap: 11px;
+  color: var(--text);
   font-family: var(--font-display);
   font-size: 0.78rem;
 }
 
 .logo:hover {
   text-decoration: none;
-  color: var(--amber);
+  color: var(--accent-deep);
+}
+
+/* Cropped to the character alone: the full logo's lettering turns to mush
+   at nav size. Transparent, so no frame needed. */
+.logo__mark {
+  width: 40px;
+  height: 40px;
+  display: block;
 }
 
 .nav {
@@ -43,20 +51,21 @@
 
 .nav a:hover {
   color: var(--text);
+  background: var(--panel);
   text-decoration: none;
 }
 
 .nav a.on {
-  color: var(--ink);
-  background: var(--green);
-  border-color: var(--green);
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--line);
 }
 
 .bar__toggle {
   display: none;
   font-family: var(--font-display);
   font-size: 0.6rem;
-  color: var(--green);
+  color: var(--text);
   background: transparent;
   border: var(--px) solid var(--line);
   padding: 10px 12px;

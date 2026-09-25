@@ -3,9 +3,13 @@
   padding-top: 52px;
 }
 
-.title pixel-dino {
-  color: var(--green);
-  margin-bottom: 26px;
+/* The logo is the hero. No frame: on the cream page its white background
+   blends, which is the whole reason the theme moved off black. */
+.hero {
+  display: block;
+  width: min(72vw, 230px);
+  height: auto;
+  margin: 0 auto 22px;
 }
 
 h1 {
@@ -35,21 +39,21 @@ h1 {
 /* Discord: outlined, purple text, same chunky treatment as the rest. */
 .btn--discord {
   background: transparent;
-  color: var(--purple);
-  border-color: var(--purple);
+  color: var(--discord);
+  border-color: var(--discord);
   box-shadow: 5px 5px 0 #3b2a66;
 }
 
 .btn--discord:hover {
-  background: var(--purple);
-  border-color: var(--purple);
-  color: var(--ink);
+  background: var(--discord);
+  border-color: var(--discord);
+  color: var(--accent-ink);
 }
 
 .welcome {
   font-family: var(--font-display);
   font-size: 0.62rem;
-  color: var(--amber);
+  color: var(--warm);
   margin: 46px 0 0;
 }
 
