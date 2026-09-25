@@ -26,6 +26,8 @@ point in the same box.
 | `strategy` | Tough and durable | Fast and agile |
 | `temperament` | Strong brute forcer | Smart and cunning |
 
+Why is less social going towards team player and more social going towards lone dino? I don't know! It's a secret!!!!
+
 Each dinosaur is a fixed ideal profile:
 
 | Dinosaur | diet | social | strategy | temperament | ‖v‖ |
