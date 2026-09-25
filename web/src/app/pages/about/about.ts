@@ -19,9 +19,9 @@ interface Member {
 })
 export class About {
   protected readonly crew: Member[] = [
-    { name: 'PLAYER ONE', role: 'PLACEHOLDER', photo: null, sprite: 'trex' },
-    { name: 'PLAYER TWO', role: 'PLACEHOLDER', photo: null, sprite: 'sauropod' },
-    { name: 'PLAYER THREE', role: 'PLACEHOLDER', photo: null, sprite: 'trex' },
-    { name: 'PLAYER FOUR', role: 'PLACEHOLDER', photo: null, sprite: 'egg' },
+    { name: 'Muskan Fatima', role: 'President', photo: null, sprite: 'trex' },
+    { name: 'Vladimir Martirosyan', role: 'Vice-President', photo: null, sprite: 'raptor' },
+    { name: 'Sarah Bernstein', role: 'Treasurer', photo: null, sprite: 'trike' },
+    { name: 'Subin Seo', role: 'Officer', photo: null, sprite: 'para' },
   ];
 }

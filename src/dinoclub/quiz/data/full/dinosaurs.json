@@ -1,75 +1,75 @@
 {
   "schema_version": 1,
-  "note": "Each dinosaur is a fixed ideal profile on the four trait axes, -5 to +5. Edit these freely -- tests/quiz/test_dinosaurs.py will tell you if an edit makes two of them indistinguishable or makes one unreachable.",
+  "note": "Each dinosaur is a fixed ideal profile on the four trait axes, -5 to +5.",
   "dinosaurs": [
     {
       "id": "tyrannosaurus",
       "name": "Tyrannosaurus rex",
-      "tagline": "You do not go around things.",
-      "blurb": "You take up space and you are not apologetic about it. When something needs doing you do it directly, loudly, and usually alone -- not because you dislike people, but because waiting for consensus has never once been the fastest route.",
+      "tagline": "OOOOO Big T!",
+      "blurb": "You're the apex alpha guy that takes charge. Always direct and honest",
       "traits": {"diet": 5, "social": 4, "strategy": -2, "temperament": 1}
     },
     {
       "id": "velociraptor",
       "name": "Velociraptor",
-      "tagline": "Clever girl.",
-      "blurb": "Fast, sharp, and always three moves ahead. You work best with a small crew of people who can keep up, and you have a slightly unsettling talent for finding the exact weak point in any system you are handed.",
+      "tagline": "Clever girlie.",
+      "blurb": "A fast and sharp thinker movin around with a small pack",
       "traits": {"diet": 4, "social": -5, "strategy": 5, "temperament": 5}
     },
     {
       "id": "triceratops",
       "name": "Triceratops",
-      "tagline": "Immovable, on purpose.",
-      "blurb": "You do not pick fights and you do not lose them. Your strength is that you are still standing after everyone else has burned out -- steady, grounded, and entirely uninterested in proving anything to anyone.",
+      "tagline": "Immovable object",
+      "blurb": "Always grounded and calm in face of any adversity. Reliable guy",
       "traits": {"diet": -5, "social": -1, "strategy": -4, "temperament": -3}
     },
     {
       "id": "ankylosaurus",
       "name": "Ankylosaurus",
-      "tagline": "Armored, and fine alone.",
-      "blurb": "You have built a life that is very hard to knock over. You keep your own counsel, you do not rattle, and anyone who mistakes your calm for softness finds out exactly once.",
+      "tagline": "Like a cooler triceratops with a tail and homies",
+      "blurb": "You are almost as solid as a triceratops but way more social and cool because of that.",
       "traits": {"diet": -5, "social": 5, "strategy": -5, "temperament": -4}
     },
     {
       "id": "parasaurolophus",
       "name": "Parasaurolophus",
-      "tagline": "The one who keeps everyone together.",
-      "blurb": "You are the group's connective tissue. You notice who has gone quiet, you carry the plans everyone else forgets, and you would rather move at the pace of the herd than arrive somewhere alone.",
+      "tagline": "Friendly dino",
+      "blurb": "You have the maternal instinct to keep people safe and grouped together. Bestest friend and listener",
       "traits": {"diet": -5, "social": -5, "strategy": 2, "temperament": 2}
     },
     {
       "id": "spinosaurus",
       "name": "Spinosaurus",
-      "tagline": "Bigger than the room, deeply weird about it.",
-      "blurb": "You are an apex predator in a category you invented yourself. You do not compete with anyone directly because you are not playing the same game, and you find the whole idea of a hierarchy faintly boring.",
+      "tagline": "Biggest boy",
+      "blurb": "You're so big and scary but not really combative. Also a very interesting looking dino",
       "traits": {"diet": 5, "social": 5, "strategy": 2, "temperament": -3}
     },
     {
       "id": "pteranodon",
       "name": "Pteranodon",
-      "tagline": "Already gone.",
-      "blurb": "You move first and explain later. Commitment feels like weight, routine feels like a trap, and your instinct for when to leave a situation has never once been wrong -- though you rarely stay long enough to confirm it.",
+      "tagline": "Unstoppable flyer",
+      "blurb": "You're a live in the moment type guy and probably own a free spirit mug. ",
       "traits": {"diet": 2, "social": -3, "strategy": 5, "temperament": -1}
     },
     {
       "id": "therizinosaurus",
       "name": "Therizinosaurus",
-      "tagline": "Gentle. Enormous claws. Do not test this.",
-      "blurb": "You are the most patient person in the room and the last one anybody should corner. You would genuinely rather resolve it quietly, and you have thought carefully about what happens if that stops working.",
+      "tagline": "Patient but dangerous",
+      "blurb": "You'll default to de-escalating situations but will unleash the Cretacious period on em if asked for it'",
       "traits": {"diet": -4, "social": 4, "strategy": -2, "temperament": 3}
     },
     {
       "id": "pachycephalosaurus",
       "name": "Pachycephalosaurus",
-      "tagline": "Solves problems with forehead.",
-      "blurb": "Your approach to obstacles is to hit them until the situation changes, and it works far more often than it has any right to. You are not reckless -- you have simply noticed that most walls are thinner than they look.",
+      "tagline": "Solve problem with forehead.",
+      "blurb": "big brute forcer. you just do stuff you think would work and that works",
       "traits": {"diet": -4, "social": 2, "strategy": 1, "temperament": -5}
     },
     {
       "id": "dilophosaurus",
       "name": "Dilophosaurus",
-      "tagline": "Underestimated, exactly once.",
-      "blurb": "You are smaller than the problem and you win anyway, because you were paying attention the whole time everyone assumed you were not. People tend to revise their read on you very suddenly.",
+      "tagline": "Underestimated soul",
+      "blurb": "Lots of potential that you choose to keep hidden. A bit of a loner but not antisocial",
       "traits": {"diet": 3, "social": 2, "strategy": 3, "temperament": 4}
     }
   ]

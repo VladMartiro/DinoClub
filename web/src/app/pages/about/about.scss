@@ -1,3 +1,21 @@
+/* The logo is full-colour art on white, which cannot sit directly on a dark
+   arcade page. Framing it on its own light card makes the white read as a
+   sticker slapped on the cabinet rather than a transparency bug. */
+.logo {
+  margin: 0 auto 30px;
+  width: min(100%, 300px);
+  padding: 14px;
+  background: #fff;
+  border: var(--px) solid var(--line);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.55);
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .intro {
   margin: 14px 0 32px;
 }
@@ -56,6 +74,7 @@
 .role {
   margin: 6px 0 0;
   font-size: 0.86rem;
+  color: var(--amber);
 }
 
 @media (max-width: 560px) {
