@@ -4,7 +4,10 @@
     @case ('intro') {
       <pixel-dino sprite="raptor" [scale]="6" label="Pixel art velociraptor" />
       <h1>WHICH DINO ARE YOU?</h1>
-      <p class="dim lede">{{ total }} questions. 2 traits. Closest dinosaur wins.</p>
+      <p class="honest">
+        Please be honest so you get your right dino. Your answers are completely
+        anonymous (because I'm too lazy to build a backend for the website)
+      </p>
       <button class="btn" type="button" (click)="start()">START</button>
 
       <ul class="axes">

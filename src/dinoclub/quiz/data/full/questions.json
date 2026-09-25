@@ -1,182 +1,174 @@
 {
   "schema_version": 1,
-  "note": "Options do not point at dinosaurs. They move the user along behavioral axes, and the dinosaur falls out of the geometry at the end. Effects are integers in [-5, 5]; an option may move several axes at once. Magnitudes are balanced so that answering at random lands near the neutral origin -- run `dino-quiz-audit` after editing, which checks exactly that.",
+  "note": "Options do not point at dinosaurs. They move the user along behavioral axes, and the dinosaur falls out of the geometry at the end. Effects are integers in [-5, 5]; an option may move several axes at once. Magnitudes are balanced so that answering at random lands near the neutral origin -- run `dino-quiz-audit` after editing, which checks exactly that. Question wording is Vlad's.",
   "questions": [
     {
-      "id": "big-problem",
-      "text": "A massive problem lands on you at work or school. What actually happens next?",
+      "id": "assignment",
+      "text": "Big assignment is posted:",
       "options": [
         {
-          "id": "charge",
-          "text": "I charge right through it, immediately, on my own.",
+          "id": "asap",
+          "text": "I get started asap",
           "effects": {
-            "diet": 2,
-            "social": 4,
-            "strategy": -3,
-            "temperament": -4
+            "diet": 3,
+            "social": 1,
+            "strategy": -1,
+            "temperament": -2
           }
         },
         {
-          "id": "brainstorm",
-          "text": "I pull in a few people and we find a clever way around it.",
-          "effects": {
-            "diet": -1,
-            "social": -5,
-            "strategy": 3,
-            "temperament": 4
-          }
-        },
-        {
-          "id": "outrun",
-          "text": "I find the fastest route past it before anyone else has finished reading the email.",
-          "effects": {
-            "diet": 1,
-            "social": 3,
-            "strategy": 5,
-            "temperament": 2
-          }
-        },
-        {
-          "id": "absorb",
-          "text": "I hold steady and let it break against me. Most of these solve themselves.",
+          "id": "help",
+          "text": "I get help from friends (or ai)",
           "effects": {
             "diet": -2,
-            "social": -1,
+            "social": -5,
+            "strategy": 2,
+            "temperament": 3
+          }
+        },
+        {
+          "id": "first",
+          "text": "I have to be the first to get it finished",
+          "effects": {
+            "diet": 5,
+            "social": 4,
+            "strategy": 3,
+            "temperament": -3
+          }
+        },
+        {
+          "id": "later",
+          "text": "I'll wait till later, i get these done anyway",
+          "effects": {
+            "diet": -2,
+            "social": 1,
             "strategy": -4,
-            "temperament": -2
+            "temperament": 2
           }
         }
       ]
     },
     {
       "id": "group-project",
-      "text": "Group project. Be honest about your role.",
+      "text": "When part of a group project:",
       "options": [
         {
-          "id": "drive",
-          "text": "I take it over. It is faster than waiting.",
-          "effects": {
-            "diet": 3,
-            "social": 4,
-            "strategy": 0,
-            "temperament": -2
-          }
-        },
-        {
-          "id": "quiet",
-          "text": "I do my part properly and keep out of the politics.",
+          "id": "mypart",
+          "text": "I'll just do my part",
           "effects": {
             "diet": -2,
-            "social": -2,
-            "strategy": -2,
-            "temperament": 0
-          }
-        },
-        {
-          "id": "angle",
-          "text": "I find the angle nobody else considered.",
-          "effects": {
-            "diet": 0,
             "social": 1,
-            "strategy": 2,
-            "temperament": 4
-          }
-        },
-        {
-          "id": "glue",
-          "text": "I keep everyone talking to each other, which is the actual work.",
-          "effects": {
-            "diet": -1,
-            "social": -5,
-            "strategy": 1,
-            "temperament": 1
-          }
-        }
-      ]
-    },
-    {
-      "id": "free-saturday",
-      "text": "A completely free Saturday. What really happens?",
-      "options": [
-        {
-          "id": "out",
-          "text": "Out early. Three things planned, two of them unplanned.",
-          "effects": {
-            "diet": 2,
-            "social": -2,
-            "strategy": 5,
-            "temperament": 1
-          }
-        },
-        {
-          "id": "alone",
-          "text": "Alone, undisturbed, and I mean that.",
-          "effects": {
-            "diet": 1,
-            "social": 5,
-            "strategy": -1,
-            "temperament": 1
-          }
-        },
-        {
-          "id": "usual",
-          "text": "The same people I always see, doing the thing we always do.",
-          "effects": {
-            "diet": -2,
-            "social": -5,
-            "strategy": 0,
-            "temperament": -1
-          }
-        },
-        {
-          "id": "nothing",
-          "text": "Nothing. Deliberately, structurally nothing.",
-          "effects": {
-            "diet": -2,
-            "social": 3,
-            "strategy": -4,
+            "strategy": -2,
             "temperament": -2
           }
-        }
-      ]
-    },
-    {
-      "id": "challenged",
-      "text": "Someone challenges you in front of other people.",
-      "options": [
+        },
         {
-          "id": "headon",
-          "text": "I meet it immediately and directly.",
+          "id": "takeover",
+          "text": "I'll take it over and finish myself (wow look at you so cool)",
           "effects": {
             "diet": 4,
-            "social": 2,
-            "strategy": 1,
-            "temperament": -5
+            "social": 4,
+            "temperament": -4
           }
         },
         {
-          "id": "dismantle",
-          "text": "I let them finish, then take the argument apart piece by piece.",
+          "id": "online",
+          "text": "I find a similar group project online and save my team's time lol",
           "effects": {
-            "diet": 2,
-            "social": 1,
-            "strategy": 0,
+            "social": -2,
+            "strategy": 4,
             "temperament": 5
           }
         },
         {
-          "id": "shrug",
-          "text": "I absorb it. Engaging would give it weight it has not earned.",
+          "id": "facilitator",
+          "text": "I become a facilitator and divide people into teams",
           "effects": {
-            "diet": -3,
-            "social": 0,
+            "social": -5,
+            "strategy": 1,
+            "temperament": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "saturday",
+      "text": "What you doing on a Saturday",
+      "options": [
+        {
+          "id": "routine",
+          "text": "I actually have a Saturday routine",
+          "effects": {
+            "social": 2,
+            "strategy": -4,
+            "temperament": 2
+          }
+        },
+        {
+          "id": "homebody",
+          "text": "I'm a homebody I'll stay home",
+          "effects": {
+            "diet": -2,
+            "social": 4,
             "strategy": -4,
             "temperament": -1
           }
         },
         {
-          "id": "deflect",
-          "text": "I make it funny and move the room on.",
+          "id": "friends",
+          "text": "Hangout with friends",
+          "effects": {
+            "diet": -2,
+            "social": -5,
+            "strategy": 1,
+            "temperament": -2
+          }
+        },
+        {
+          "id": "nothing",
+          "text": "0 things planned, idk, something",
+          "effects": {
+            "diet": 2,
+            "strategy": 5,
+            "temperament": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "confrontation",
+      "text": "Big opp pulls up",
+      "options": [
+        {
+          "id": "combative",
+          "text": "I get combative like the alpha I am",
+          "effects": {
+            "diet": 5,
+            "social": 3,
+            "temperament": -5
+          }
+        },
+        {
+          "id": "structured",
+          "text": "I'll have a discussion in a structured way",
+          "effects": {
+            "diet": 1,
+            "social": 1,
+            "strategy": -1,
+            "temperament": 5
+          }
+        },
+        {
+          "id": "bigger",
+          "text": "I take it and become the bigger person",
+          "effects": {
+            "diet": -4,
+            "strategy": -4
+          }
+        },
+        {
+          "id": "joke",
+          "text": "I de-escalate and joke around",
           "effects": {
             "diet": -1,
             "social": -3,
@@ -187,92 +179,89 @@
       ]
     },
     {
-      "id": "big-decision",
-      "text": "How do you actually make a big decision?",
+      "id": "decisions",
+      "text": "How do you make small decisions?",
       "options": [
         {
-          "id": "gut",
-          "text": "Gut. Fast. I do not revisit it.",
+          "id": "intuition",
+          "text": "Mostly what intuition says",
           "effects": {
-            "diet": 3,
+            "diet": 2,
             "social": 2,
-            "strategy": 4,
+            "strategy": 3,
             "temperament": -5
           }
         },
         {
-          "id": "model",
-          "text": "I map every scenario until the answer is obvious.",
+          "id": "overthink",
+          "text": "I overthink all 100 different scenarios",
           "effects": {
-            "diet": 0,
+            "diet": -1,
             "social": 2,
-            "strategy": -2,
+            "strategy": -4,
             "temperament": 5
           }
         },
         {
-          "id": "consult",
-          "text": "I talk it through with the people I trust.",
+          "id": "advice",
+          "text": "I listen to advice/guidance first",
           "effects": {
-            "diet": -2,
+            "diet": -3,
             "social": -5,
-            "strategy": 0,
-            "temperament": 0
+            "temperament": -1
           }
         },
         {
-          "id": "stable",
-          "text": "Whichever option keeps things stable.",
+          "id": "logical",
+          "text": "I do whatever is most logical everytime",
           "effects": {
-            "diet": -2,
-            "social": 0,
-            "strategy": -3,
-            "temperament": -1
+            "diet": 1,
+            "social": 1,
+            "strategy": 1,
+            "temperament": 2
           }
         }
       ]
     },
     {
       "id": "environment",
-      "text": "Your ideal working environment.",
+      "text": "Ideal studying/working environment:",
       "options": [
         {
-          "id": "door",
-          "text": "A door I can close.",
+          "id": "private",
+          "text": "Any private space",
           "effects": {
             "diet": 1,
             "social": 5,
             "strategy": -1,
-            "temperament": 2
+            "temperament": 1
           }
         },
         {
-          "id": "loud",
-          "text": "A loud room full of people I like.",
+          "id": "coffeeshop",
+          "text": "Coffeeshop",
           "effects": {
             "diet": -1,
-            "social": -5,
-            "strategy": 2,
-            "temperament": -1
+            "social": -4,
+            "strategy": 2
           }
         },
         {
-          "id": "roaming",
-          "text": "Somewhere different every week.",
+          "id": "newplace",
+          "text": "Some new cute place",
           "effects": {
-            "diet": 2,
-            "social": 0,
-            "strategy": 5,
-            "temperament": 0
+            "diet": 1,
+            "social": -2,
+            "strategy": 5
           }
         },
         {
-          "id": "fixed",
-          "text": "The same desk, the same setup, indefinitely.",
+          "id": "mydesk",
+          "text": "My desk everytime",
           "effects": {
             "diet": -2,
-            "social": 1,
-            "strategy": -4,
+            "social": 2,
+            "strategy": -5,
             "temperament": -2
           }
         }
@@ -280,159 +269,150 @@
     },
     {
       "id": "broken",
-      "text": "Something you rely on breaks.",
+      "text": "An important item you own is half-broken",
       "options": [
         {
-          "id": "fix",
-          "text": "I fix it myself, now, possibly badly.",
+          "id": "fixmyself",
+          "text": "I attempt to fix myself and only myself",
           "effects": {
             "diet": 3,
-            "social": 3,
-            "strategy": 2,
-            "temperament": -2
+            "social": 4,
+            "strategy": 1
           }
         },
         {
-          "id": "research",
-          "text": "I research the correct replacement for a week.",
+          "id": "replace",
+          "text": "I start looking for replacements because too important",
           "effects": {
-            "diet": 1,
+            "diet": 2,
+            "strategy": 1,
+            "temperament": 3
+          }
+        },
+        {
+          "id": "gethelp",
+          "text": "I run for others' help",
+          "effects": {
+            "diet": -3,
+            "social": -5
+          }
+        },
+        {
+          "id": "usebroken",
+          "text": "It's ok I'll just use it half-broken",
+          "effects": {
+            "diet": -3,
             "social": 1,
-            "strategy": -2,
-            "temperament": 5
-          }
-        },
-        {
-          "id": "ask",
-          "text": "I ask around until I find someone who knows.",
-          "effects": {
-            "diet": -2,
-            "social": -5,
-            "strategy": 0,
-            "temperament": 0
-          }
-        },
-        {
-          "id": "live",
-          "text": "I live with it broken. It is fine. It is basically fine.",
-          "effects": {
-            "diet": -2,
-            "social": 1,
-            "strategy": -2,
+            "strategy": -4,
             "temperament": -4
           }
         }
       ]
     },
     {
-      "id": "conflict",
-      "text": "There is conflict in a group you are part of.",
+      "id": "friend-beef",
+      "text": "There's people beefing in friend group",
       "options": [
         {
-          "id": "say",
-          "text": "I say the thing nobody else will say.",
+          "id": "logical",
+          "text": "I stay true and logical",
           "effects": {
-            "diet": 4,
+            "diet": 2,
             "social": 3,
-            "strategy": 0,
-            "temperament": -3
+            "temperament": 2
           }
         },
         {
-          "id": "backchannel",
-          "text": "I work it out quietly, one person at a time.",
+          "id": "onebyone",
+          "text": "I talk to people one by one",
           "effects": {
             "diet": -1,
-            "social": -2,
+            "social": -4,
             "strategy": -1,
+            "temperament": 3
+          }
+        },
+        {
+          "id": "deescalate",
+          "text": "Whatever it is I de-escalate",
+          "effects": {
+            "diet": -3,
+            "social": -3,
+            "temperament": -1
+          }
+        },
+        {
+          "id": "popcorn",
+          "text": "I spectate and eat my popcorn",
+          "effects": {
+            "social": 4,
+            "strategy": 2,
+            "temperament": -4
+          }
+        }
+      ]
+    },
+    {
+      "id": "exam-prep",
+      "text": "How do you prep for exams",
+      "options": [
+        {
+          "id": "grind",
+          "text": "I have to grind practice tests for days",
+          "effects": {
+            "diet": 3,
+            "social": 2,
+            "strategy": -4,
+            "temperament": -5
+          }
+        },
+        {
+          "id": "cheat",
+          "text": "I look for ways to cheat lol",
+          "effects": {
+            "diet": 2,
+            "strategy": 5,
             "temperament": 5
           }
         },
         {
-          "id": "hold",
-          "text": "I hold the group together until it passes.",
+          "id": "calm",
+          "text": "I take a calm and calculated prep routine, no stress",
+          "effects": {
+            "diet": -1,
+            "social": 1,
+            "strategy": -2,
+            "temperament": 3
+          }
+        },
+        {
+          "id": "friends",
+          "text": "I prep with friends",
           "effects": {
             "diet": -3,
             "social": -5,
-            "strategy": -1,
-            "temperament": 0
-          }
-        },
-        {
-          "id": "leave",
-          "text": "I remove myself. Not my weather.",
-          "effects": {
-            "diet": 0,
-            "social": 4,
-            "strategy": 3,
-            "temperament": -1
-          }
-        }
-      ]
-    },
-    {
-      "id": "prepare",
-      "text": "How do you prepare for something genuinely difficult?",
-      "options": [
-        {
-          "id": "overwhelm",
-          "text": "Overwhelming force. I do far more than is needed.",
-          "effects": {
-            "diet": 4,
-            "social": 2,
-            "strategy": -3,
-            "temperament": -3
-          }
-        },
-        {
-          "id": "shortcut",
-          "text": "I find the shortcut everyone else missed.",
-          "effects": {
-            "diet": 1,
-            "social": 0,
-            "strategy": 5,
-            "temperament": 4
-          }
-        },
-        {
-          "id": "fortify",
-          "text": "Slowly and defensively, until nothing can surprise me.",
-          "effects": {
-            "diet": -2,
-            "social": 1,
-            "strategy": -4,
-            "temperament": -1
-          }
-        },
-        {
-          "id": "team",
-          "text": "I make sure the people around me are ready, and that covers me too.",
-          "effects": {
-            "diet": -2,
-            "social": -4,
             "strategy": 1,
-            "temperament": 0
+            "temperament": -2
           }
         }
       ]
     },
     {
-      "id": "misread",
-      "text": "What do people consistently get wrong about you?",
+      "id": "perception",
+      "text": "What do people think about you",
       "options": [
         {
           "id": "aggressive",
-          "text": "They think I am aggressive. I am just direct.",
+          "text": "People think I'm agressive but I'm just direct",
           "effects": {
             "diet": 5,
             "social": 3,
-            "strategy": 0,
             "temperament": -2
           }
         },
         {
-          "id": "quiet",
-          "text": "They think I am quiet. I am watching.",
+          "id": "lowkey",
+          "text": "They think I'm chill and low-key but there's more to me",
           "effects": {
             "diet": 1,
             "social": 3,
@@ -441,23 +421,22 @@
           }
         },
         {
-          "id": "soft",
-          "text": "They think I am soft. I just do not need to prove it.",
+          "id": "softy",
+          "text": "They think I'm a softy soft little boy",
           "effects": {
-            "diet": -4,
-            "social": 0,
+            "diet": -5,
             "strategy": -3,
-            "temperament": -2
+            "temperament": -1
           }
         },
         {
-          "id": "everywhere",
-          "text": "They think I am everywhere. I just like people.",
+          "id": "butterfly",
+          "text": "They think I'm the most social butterfly",
           "effects": {
             "diet": -2,
             "social": -5,
             "strategy": 3,
-            "temperament": -1
+            "temperament": -2
           }
         }
       ]

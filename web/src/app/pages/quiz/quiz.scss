@@ -11,6 +11,25 @@
   margin: 14px 0 28px;
 }
 
+/* Accurate, not a joke: the whole engine runs in the browser, so there is
+   nothing to send anywhere. */
+.honest {
+  color: var(--pink);
+  max-width: 46ch;
+  margin: 16px auto 30px;
+  text-wrap: balance;
+  /* Flashes for 2s to catch the eye, then settles so it can be read. Four
+     0.5s cycles; once the animation stops the element reverts to its natural
+     opacity, so it ends visible without needing a fill-mode. */
+  animation: blink 0.5s steps(1, end) 4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .honest {
+    animation: none;
+  }
+}
+
 /* ---- intro ---- */
 .axes {
   list-style: none;
