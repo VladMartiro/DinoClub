@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:pages": "ng build --base-href=/DinoClub/ && cp dist/web/browser/index.html dist/web/browser/404.html && touch dist/web/browser/.nojekyll"
   },
   "private": true,
   "packageManager": "npm@11.19.0",

@@ -1,0 +1,77 @@
+# Builds the Angular site in web/ and publishes it to GitHub Pages.
+#
+# This file does nothing until Pages is switched on for the repository:
+#   Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"
+# Until then it is inert. After that, every push to main redeploys.
+
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # lets you trigger a deploy by hand from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it half-published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Test
+        run: npm test
+        env:
+          CI: true # vitest otherwise sits in watch mode and never exits
+
+      # The site lives at https://<user>.github.io/<repo>/, not at the domain
+      # root, so every asset and route has to resolve against that subpath.
+      # Taking the name from the repo means renaming it does not break the
+      # build.
+      - name: Build
+        run: npm run build -- --base-href="/${{ github.event.repository.name }}/"
+
+      - name: SPA fallback and Jekyll opt-out
+        run: |
+          # Pages has no server-side rewrite, so a deep link like /quiz would
+          # 404. Serving the app as the 404 page lets Angular's router pick the
+          # URL up and show the right page.
+          cp dist/web/browser/index.html dist/web/browser/404.html
+          # Without this, Pages runs the output through Jekyll, which silently
+          # drops files and folders beginning with an underscore.
+          touch dist/web/browser/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          # Relative to the repo root, not to `working-directory`.
+          path: web/dist/web/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
