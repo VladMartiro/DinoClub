@@ -25,7 +25,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .honest {
+  .honest,
+  .barrow__you,
+  .map__you {
     animation: none;
   }
 }
@@ -258,6 +260,7 @@
   transform: translate(-50%, -50%);
   background: var(--pink);
   outline: var(--px) solid var(--bg);
+  animation: blink 0.5s steps(1, end) 4;
 }
 
 .bars {
@@ -294,16 +297,31 @@
     var(--panel);
 }
 
+/* Appearance only -- shared by the markers on the bars and the swatches in
+   the legend, so the legend cannot drift out of sync with what it explains. */
 .barrow__dino,
 .barrow__you {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: middle;
+  flex: none;
+}
+
+/* Positioning applies only inside a track. */
+.barrow__track > .barrow__dino,
+.barrow__track > .barrow__you {
   position: absolute;
   top: 50%;
-  width: 12px;
-  height: 12px;
   transform: translate(-50%, -50%);
 }
 
+/* Deliberately larger than the pink marker: when you land exactly on the
+   dinosaur the two coincide, and the ring reads as a bullseye instead of
+   hiding the winner underneath. */
 .barrow__dino {
+  width: 19px;
+  height: 19px;
   border: var(--px) solid var(--green);
   box-sizing: border-box;
 }
@@ -311,12 +329,26 @@
 .barrow__you {
   background: var(--pink);
   outline: var(--px) solid var(--bg);
+  /* Flashes for 2s to draw the eye, then holds. An infinite blink left the
+     single most important mark on the chart invisible half the time. */
+  animation: blink 0.5s steps(1, end) 4;
 }
 
 .legend {
   font-family: var(--font-display);
-  font-size: 0.48rem;
-  margin: 4px 0 0;
+  font-size: 0.62rem;
+  color: var(--dim);
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+}
+
+.legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .summary {

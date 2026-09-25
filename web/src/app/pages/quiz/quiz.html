@@ -74,7 +74,7 @@
                 </div>
               }
               <div
-                class="map__you blink"
+                class="map__you"
                 [style.left.%]="pct(r.profile[xTrait.key])"
                 [style.top.%]="pct(r.profile[yTrait.key], true)"
               ></div>
@@ -89,12 +89,20 @@
                 <span class="barrow__lbl dim">{{ t.negative | uppercase }}</span>
                 <div class="barrow__track">
                   <span class="barrow__dino" [style.left.%]="pct(r.winner.traits[t.key])"></span>
-                  <span class="barrow__you blink" [style.left.%]="pct(r.profile[t.key])"></span>
+                  <span class="barrow__you" [style.left.%]="pct(r.profile[t.key])"></span>
                 </div>
                 <span class="barrow__lbl">{{ t.positive | uppercase }}</span>
               </div>
             }
-            <p class="legend dim">&#9632; YOU &nbsp; &#9633; {{ r.winner.name | uppercase }}</p>
+            <p class="legend">
+              <span class="legend__item">
+                <span class="barrow__you" aria-hidden="true"></span> YOU
+              </span>
+              <span class="legend__item">
+                <span class="barrow__dino" aria-hidden="true"></span>
+                {{ r.winner.name | uppercase }}
+              </span>
+            </p>
           </div>
         }
 

@@ -52,8 +52,14 @@ describe('Quiz page, end to end', () => {
     } else {
       // One bar per axis, each with a you-marker and a winner-marker.
       expect(page.querySelectorAll('.barrow').length).toBe(engine.keys.length);
-      expect(page.querySelectorAll('.barrow__you').length).toBe(engine.keys.length);
-      expect(page.querySelectorAll('.barrow__dino').length).toBe(engine.keys.length);
+      expect(page.querySelectorAll('.barrow__track > .barrow__you').length).toBe(engine.keys.length);
+      expect(page.querySelectorAll('.barrow__track > .barrow__dino').length).toBe(engine.keys.length);
+      // The legend reuses the very same marker classes, so it cannot drift
+      // out of sync with the thing it is explaining.
+      const legend = page.querySelector('.legend');
+      expect(legend?.querySelectorAll('.barrow__you').length).toBe(1);
+      expect(legend?.querySelectorAll('.barrow__dino').length).toBe(1);
+      expect(legend?.textContent).toContain('YOU');
     }
     expect(page.querySelectorAll('.others li').length).toBe(Math.min(4, engine.dinosaurs.length - 1));
   });
