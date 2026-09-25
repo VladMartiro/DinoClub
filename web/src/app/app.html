@@ -1,7 +1,7 @@
 <header class="bar">
   <div class="wrap bar__in">
     <a class="logo" routerLink="/" (click)="closeNav()">
-      <img class="logo__mark" src="dino-club-mark.png" alt="" width="132" height="132" />
+      <img class="logo__mark" src="dino-club-mark.png" alt="" width="160" height="160" />
       <span>DINO CLUB</span>
     </a>
 
@@ -32,4 +32,26 @@
 <main>
   <router-outlet />
 </main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <section class="foot__col">
+      <p class="foot__h">CONTACT THE CLUB</p>
+      <a class="foot__mail" [href]="'mailto:' + club.email">{{ club.email }}</a>
+    </section>
+
+    <nav class="foot__col" aria-label="Footer">
+      <p class="foot__h">PAGES</p>
+      @for (link of links; track link.path) {
+        <a class="foot__link" [routerLink]="link.path">{{ link.label }}</a>
+      }
+    </nav>
+
+    <section class="foot__col">
+      <p class="foot__h">JOIN US</p>
+      <a class="foot__link" [href]="club.discordUrl" target="_blank" rel="noopener">DISCORD</a>
+      <a class="foot__link" [href]="club.uncClubUrl" target="_blank" rel="noopener">UNC CLUB</a>
+    </section>
+  </div>
+</footer>
 

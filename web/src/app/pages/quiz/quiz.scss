@@ -18,10 +18,10 @@
   max-width: 46ch;
   margin: 16px auto 30px;
   text-wrap: balance;
-  /* Flashes for 2s to catch the eye, then settles so it can be read. Four
+  /* Flashes for 1s to catch the eye, then settles so it can be read. Two
      0.5s cycles; once the animation stops the element reverts to its natural
      opacity, so it ends visible without needing a fill-mode. */
-  animation: blink 0.5s steps(1, end) 4;
+  animation: blink 0.5s steps(1, end) 2;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -98,3 +98,60 @@
     padding: 12px 10px;
   }
 }
+
+/* Sticky footer: on short pages (the recommender is barely half a screen) the
+   footer would otherwise float mid-page with dead space beneath it. */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.foot {
+  border-top: var(--px) solid var(--line);
+  background: var(--panel);
+  margin-top: 56px;
+  padding: 30px 0 34px;
+}
+
+.foot__in {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 26px 32px;
+}
+
+.foot__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.foot__h {
+  font-family: var(--font-display);
+  font-size: 0.56rem;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.foot__link,
+.foot__mail {
+  font-size: 0.95rem;
+  color: var(--dim);
+  text-decoration: none;
+}
+
+.foot__link:hover,
+.foot__mail:hover {
+  color: var(--accent-deep);
+  text-decoration: underline;
+}
+
+.foot__mail {
+  color: var(--accent-deep);
+  word-break: break-all;
+}

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { CLUB } from '../../club';
+
 @Component({
   selector: 'app-home',
   imports: [RouterLink],
@@ -8,6 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.scss',
 })
 export class Home {
-  protected readonly discordUrl = 'https://discord.gg/c7HWD5gHsS';
-  protected readonly uncClubUrl = 'https://heellife.unc.edu/';
+  protected readonly discordUrl = CLUB.discordUrl;
+  protected readonly uncClubUrl = CLUB.uncClubUrl;
 }
