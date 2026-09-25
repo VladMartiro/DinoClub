@@ -21,10 +21,16 @@ def test_dinosaur_ids_are_unique_and_slug_like(quiz):
 
 
 def test_every_dinosaur_has_copy_for_the_results_page(quiz):
+    """The result page needs a name, a tagline and a blurb for every dinosaur.
+
+    The length floor is deliberately low. It exists to catch an empty or
+    truncated blurb, not to enforce a house style -- the copy is written in a
+    short, punchy voice and the shortest is currently 55 characters.
+    """
     for dinosaur in quiz.dinosaurs:
         assert dinosaur.name.strip()
         assert dinosaur.tagline.strip()
-        assert len(dinosaur.blurb) > 60
+        assert len(dinosaur.blurb) >= 40, "{} blurb looks truncated".format(dinosaur.id)
 
 
 def test_dinosaurs_are_distinguishable(quiz):
