@@ -5,12 +5,9 @@
   <p class="dim tagline">THE VERY FIRST DINO MOVIE CLUB IN THE SOUTH</p>
 
   <div class="actions">
-    <button class="btn btn--discord" type="button" (click)="soon('DISCORD')">JOIN DISCORD</button>
-    <button class="btn" type="button" (click)="soon('UNC CLUB')">JOIN UNC CLUB</button>
+    <a class="btn btn--discord" [href]="discordUrl" target="_blank" rel="noopener">JOIN DISCORD</a>
+    <a class="btn" [href]="uncClubUrl" target="_blank" rel="noopener">JOIN UNC CLUB</a>
   </div>
-  @if (pending()) {
-    <p class="soon" role="status">{{ pending() }} LINK COMING SOON</p>
-  }
 
   <div class="actions">
     <a class="btn btn--alt" routerLink="/quiz">DINO PERSONALITY TEST</a>

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { PixelDino } from '../../shared/pixel-dino/pixel-dino';
@@ -10,11 +10,6 @@ import { PixelDino } from '../../shared/pixel-dino/pixel-dino';
   styleUrl: './home.scss',
 })
 export class Home {
-  /* Shell buttons: no links yet. When the Discord invite and UNC club page
-     exist, turn these back into <a [href]> and drop `pending`. */
-  protected readonly pending = signal<string | null>(null);
-
-  protected soon(what: string): void {
-    this.pending.set(what);
-  }
+  protected readonly discordUrl = 'https://discord.gg/c7HWD5gHsS';
+  protected readonly uncClubUrl = 'https://heellife.unc.edu/';
 }
