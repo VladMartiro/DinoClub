@@ -3,5 +3,5 @@
 export const CLUB = {
   email: 'dinoclub@unc.edu',
   discordUrl: 'https://discord.gg/c7HWD5gHsS',
-  uncClubUrl: 'https://heellife.unc.edu/',
+  uncClubUrl: 'https://heellife.unc.edu/organization/dinoclub',
 } as const;
