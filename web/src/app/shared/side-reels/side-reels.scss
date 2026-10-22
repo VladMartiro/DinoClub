@@ -1,0 +1,107 @@
+/* Two poster reels pinned to the side margins. They live in the empty space
+   beside the 880px content column, so they only appear when the viewport is
+   wide enough to have that space -- below that they are hidden, never squeezed
+   over the content. At 190px wide they need a 1400px viewport to keep a clear
+   gap from the content. */
+
+:host {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  :host {
+    display: block;
+  }
+}
+
+.reel {
+  position: fixed;
+  top: 76px; /* clear the sticky header */
+  bottom: 16px;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Centre each reel in its margin: (viewport - content) / 2 is the margin
+   width, and the reel sits in the middle of it. */
+.reel--left {
+  left: calc((100vw - var(--maxw)) / 4 - 95px);
+}
+
+.reel--right {
+  right: calc((100vw - var(--maxw)) / 4 - 95px);
+}
+
+
+.reel__window {
+  flex: 1;
+  overflow: hidden;
+  /* Fade the top and bottom so tiles slide in and out rather than being cut. */
+  mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+}
+
+.reel__track {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 18px; /* keeps the gap at the seam equal to the others */
+}
+
+/* The track holds the list twice; moving it by -50% scrolls exactly one copy,
+   which is what makes the loop seamless. */
+.reel__track--down {
+  animation: reel-down 40s linear infinite;
+}
+
+.reel__track--up {
+  animation: reel-up 40s linear infinite;
+}
+
+@keyframes reel-down {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes reel-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+.tile {
+  margin: 0;
+  background: var(--panel);
+  border: var(--px) solid var(--line);
+  box-shadow: 5px 5px 0 var(--shadow);
+  padding: 8px;
+}
+
+.tile img,
+.tile__ph {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3; /* standard poster ratio */
+  object-fit: cover;
+}
+
+.tile__ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 8px,
+    rgba(19, 41, 75, 0.08) 8px 16px
+  );
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .reel__track--down,
+  .reel__track--up {
+    animation: none;
+  }
+}

@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { CLUB } from './club';
+import { SideReels } from './shared/side-reels/side-reels';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, SideReels],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

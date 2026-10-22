@@ -1,0 +1,31 @@
+<aside class="reel reel--left" aria-hidden="true">
+  <div class="reel__window">
+    <div class="reel__track reel__track--down">
+      @for (item of left; track $index) {
+        <figure class="tile">
+          @if (item.image) {
+            <img [src]="item.image" alt="" />
+          } @else {
+            <div class="tile__ph"><pixel-dino [sprite]="item.sprite" [scale]="5" /></div>
+          }
+        </figure>
+      }
+    </div>
+  </div>
+</aside>
+
+<aside class="reel reel--right" aria-hidden="true">
+  <div class="reel__window">
+    <div class="reel__track reel__track--up">
+      @for (item of right; track $index) {
+        <figure class="tile">
+          @if (item.image) {
+            <img [src]="item.image" alt="" />
+          } @else {
+            <div class="tile__ph"><pixel-dino [sprite]="item.sprite" [scale]="5" /></div>
+          }
+        </figure>
+      }
+    </div>
+  </div>
+</aside>

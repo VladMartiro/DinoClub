@@ -112,6 +112,9 @@ main {
 }
 
 .foot {
+  /* Sits above the fixed side reels, which would otherwise run over it. */
+  position: relative;
+  z-index: 2;
   border-top: var(--px) solid var(--line);
   background: var(--panel);
   margin-top: 56px;
