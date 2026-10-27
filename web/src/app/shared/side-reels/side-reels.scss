@@ -78,12 +78,18 @@
   padding: 8px;
 }
 
-.tile img,
+/* Images keep their own shape: these are memes with text in them, and
+   cropping to a fixed ratio would cut the jokes off. */
+.tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .tile__ph {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3; /* standard poster ratio */
-  object-fit: cover;
+  aspect-ratio: 2 / 3; /* poster shape for empty slots */
 }
 
 .tile__ph {

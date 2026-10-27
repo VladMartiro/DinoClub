@@ -3,33 +3,19 @@ import { Component } from '@angular/core';
 import { PixelDino, SpriteName } from '../pixel-dino/pixel-dino';
 
 interface ReelItem {
-  /* Not displayed -- kept so each tile stays identifiable when posters go in. */
-  title: string;
-  /* Path to a poster in web/public/, e.g. 'posters/jurassic-park.jpg'.
-     Leave null and the tile renders a pixel placeholder instead. */
+  /* Path under web/public/. Leave null to show a pixel placeholder instead. */
   image: string | null;
+  /* Shown only when `image` is null. */
   sprite: SpriteName;
 }
 
-/* Placeholders for now. Left reel = films the club has watched, right reel =
-   films on the list. Swap `image` in per tile when real posters exist. */
-const WATCHED: ReelItem[] = [
-  { title: 'JURASSIC PARK', image: null, sprite: 'trex' },
-  { title: 'THE LAND BEFORE TIME', image: null, sprite: 'sauropod' },
-  { title: 'GODZILLA', image: null, sprite: 'spino' },
-  { title: 'KING KONG', image: null, sprite: 'raptor' },
-  { title: 'DINOSAUR', image: null, sprite: 'trike' },
-  { title: 'WALKING WITH DINOSAURS', image: null, sprite: 'para' },
-];
+const img = (n: number): ReelItem => ({ image: `memes/meme-${String(n).padStart(2, '0')}.jpg`, sprite: 'egg' });
 
-const UP_NEXT: ReelItem[] = [
-  { title: 'THE LOST WORLD', image: null, sprite: 'raptor' },
-  { title: 'PREHISTORIC PLANET', image: null, sprite: 'ptera' },
-  { title: 'THE GOOD DINOSAUR', image: null, sprite: 'galli' },
-  { title: 'CARNOSAUR', image: null, sprite: 'dilo' },
-  { title: 'VALLEY OF GWANGI', image: null, sprite: 'ankylo' },
-  { title: '65', image: null, sprite: 'pachy' },
-];
+/* Images live in web/public/memes/. Alternated between the reels so each
+   side gets a mix of photos and cartoons. Each reel needs at least 4 or a
+   tall window shows the same image twice at once. */
+const LEFT: ReelItem[] = [img(1), img(3), img(5), img(7), img(9)];
+const RIGHT: ReelItem[] = [img(2), img(4), img(6), img(8)];
 
 @Component({
   selector: 'side-reels',
@@ -40,6 +26,6 @@ const UP_NEXT: ReelItem[] = [
 export class SideReels {
   /* Each list is rendered twice back to back; the animation moves the track
      by exactly one copy's height, so the loop has no visible seam. */
-  protected readonly left = [...WATCHED, ...WATCHED];
-  protected readonly right = [...UP_NEXT, ...UP_NEXT];
+  protected readonly left = [...LEFT, ...LEFT];
+  protected readonly right = [...RIGHT, ...RIGHT];
 }
